@@ -3,12 +3,149 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="food">FRESH FOOD</string>
-    <string name="delivery">FAST DELIVERY</string>
+    //OC start project string
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</string>
     <string name="payment">EASY PAYMENT</string>
 
-    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</string>
+    //Splash screen
+    <string name="food">FRESH FOOD</string>
+    <string name="delivery">FAST DELIVERY</string>
 
+    //Search property
+    <string name="search_property">Search</string>
 
+    //Currency
+    <string name="currency">Currency</string>
+
+    //Core string
+    <string name="property_menu">Add Property</string>
+    <string name="agent_menu">Add Agent</string>
+    <string name="create_agent_first">Create an agent first</string>
+    <string name="property_title">Add Property</string>
+    <string name="validate_menu">Validate</string>
+    <string name="type_dropdown_menu">Type</string>
+    <string name="price_dollar">Price ($)</string>
+    <string name="surface_square_meter">Surface (m²)</string>
+    <string name="rooms">Rooms</string>
+    <string name="bedrooms">Bedrooms</string>
+    <string name="bathrooms">Bathrooms</string>
+    <string name="near_by">Near by:</string>
+    <string name="school">School</string>
+    <string name="playground">Playground</string>
+    <string name="shop">Shop</string>
+    <string name="buses">Buses</string>
+    <string name="subway">Subway</string>
+    <string name="park">Park</string>
+    <string name="description">Description</string>
+    <string name="address">Address</string>
+    <string name="on_market_since">On Market since</string>
+    <string name="neighbourhood">Neighbourhood</string>
+    <string name="sold">Sold</string>
+    <string name="sold_on">Sold on</string>
+    <string name="price_euros">Price (€)</string>
+    <string name="surface_ft2">Surface (ft²)</string>
+    <string name="description_details_property">Description</string>
+    <string name="surface">Surface</string>
+    <string name="select_agent_n_type">Select at least one type and one agent</string>
+    <string name="search_activity_name">Search</string>
+    <string name="details_activity_name">Details</string>
+    <string name="add_pictures">Add pictures</string>
+    <string name="take_new_picture">Take new picture</string>
+    <string name="pick_from_library">Pick from library</string>
+    <string name="no_description">Need description</string>
+    <string name="select_all">Select all</string>
+    <string name="flat">Flat</string>
+    <string name="penthouse">Penthouse</string>
+    <string name="townhouse">Townhouse</string>
+    <string name="house">House</string>
+    <string name="duplex">Duplex</string>
+    <string name="max_price">Max price</string>
+    <string name="min_price">Min price</string>
+    <string name="type">Type</string>
+    <string name="min_surface">Min surface</string>
+    <string name="min_rooms">Min rooms</string>
+    <string name="min_bedrooms">Min bedrooms</string>
+    <string name="min_bathrooms">Min bathrooms</string>
+    <string name="posted_after">Posted after</string>
+    <string name="extras">Extras</string>
+    <string name="is_available">is available</string>
+    <string name="has_pictures">has pictures</string>
+    <string name="has_to_be_in_format_date">Has to be dd/MM/yyyy</string>
+    <string name="price">Price</string>
+    <string name="price_euro_details">%s€</string>
+    <string name="price_dollar_details">$%s</string>
+    <string name="no_gps_data">Turn on data and GPS to display the map</string>
+    <string name="offline_mode">Offline mode</string>
+    <string name="offline_mode_message">You are offline, all modifications will be saved as a draft</string>
+    <string name="show_original">Show original</string>
+    <string name="save_draft">Save as draft</string>
+
+    //Add agent string
+    <string name="manage_by">Manage by</string>
+    <string name="add_agent">Add Agent</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email">Email</string>
+    <string name="last_name">Last name</string>
+    <string name="first_name">First name</string>
+    <string name="error_message_first_name">Incorrect First Name</string>
+    <string name="error_message_last_name">Incorrect Last Name</string>
+    <string name="error_message_email">Incorrect Email</string>
+    <string name="error_message_phone">Incorrect Phone Number</string>
+
+    //permission string
+    <string name="storage_perm_request">App need storage permission</string>
+    <string name="allow_gps">Allow GPS permission to use the map feature</string>
+    <string name="allow_storage">Allow storage permission to add pictures</string>
+
+    //error string
+    <string name="unknown_error">Unknown error</string>
+    <string name="error_saving">Error with your request, property can\'t be saved</string>
+    <string name="error_finding_agents">Error finding agents please try again</string>
+    <string name="incorrect_type">Incorrect Type</string>
+    <string name="error_fetching">Error fetching data from network</string>
+    <string name="error_update_server">Error updating data to server</string>
+    <string name="error_modification">Modifications canceled</string>
+    <string name="no_property_found">No property found</string>
+    <string name="no_agent_found">Error finding agents please try again</string>
+
+    //Ok and cancel buttons
+    <string name="ok_button">OK</string>
+    <string name="cancel_button">CANCEL</string>
+
+    //wifi
+    <string name="no_wifi_message">You are not connected to wifi. Do you wish to download data from the network anyways?</string>
+    <string name="no_wifi_title">No wifi connection</string>
+
+    //core string2
+    <string name="can_t_be_empty">Can\'t be empty</string>
+    <string name="incorrect_date">Incorrect Date</string>
+    <string name="incorrect_address">Incorrect address</string>
+    <string name="agent_added">Agent added to the database</string>
+    <string name="property_added">Property added to the database</string>
+    <string name="no_properties">No properties available</string>
+    <string name="no_gps">No GPS Signal found</string>
+    <string name="center_camera_on_location">Center camera on location</string>
+    <string name="modify">Modify</string>
+    <string name="media">Media</string>
+    <string name="n_a">N/A</string>
+    <string name="number_of_rooms">Number of rooms</string>
+    <string name="number_of_bathrooms">Number of bathrooms</string>
+    <string name="location">Location</string>
+    <string name="number_of_bedrooms">Number of bedrooms</string>
+    <string name="surface_m2_details">%s m²</string>
+    <string name="ft_2_surface_details">%s ft²</string>
+    <string name="property_modified">This property has been modified</string>
+    <string name="select_one_agent">Select at least one agent</string>
+    <string name="select_one_type">Select at least one type</string>
+    <string name="seeing_draft">You are seeing a draft of your latest modifications</string>
+    <string name="saved_as_draft">You are offline, modification were saved as a draft</string>
+    <string name="modify_draft">Modification saved as draft</string>
+    <string name="refresh">Refresh</string>
+    <string name="picture_not_available">Some pictures might not be available</string>
+    <string name="connect_data_update">Please connect to internet to upload the latest property from the network</string>
+    <string name="nb_property_added">%s property was added</string>
+    <string name="nb_properties_added">%s properties were added</string>
+    <string name="no_new_property">No new property</string>
+    <string name="internet_need">You need internet to add an agent</string>
 
 </resources>
