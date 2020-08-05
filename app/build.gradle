@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 30
@@ -10,6 +12,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -17,21 +20,106 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
-    implementation 'androidx.viewpager2:viewpager2:1.0.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    implementation "androidx.core:core-ktx:$rootProject.coreKtxVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.liveDataKtxVersion"
     //lottie animation
     def lottieVersion = "3.4.0"
     implementation "com.airbnb.android:lottie:$lottieVersion"
+
+    //DESIGN
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation 'com.google.android.material:material:1.3.0-alpha02'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    //ROBOLECTRIC
+    testImplementation "org.robolectric:robolectric:$rootProject.robolectricVersion"
+
+
+    //TEST
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoCoreVersion"
+    testImplementation "junit:junit:$rootProject.jUnitVersion"
+    testImplementation "androidx.test:core:$rootProject.testCoreVersion"
+    testImplementation "androidx.test.ext:junit:$rootProject.testJUnitVersion"
+    testImplementation "androidx.test:runner:$rootProject.testRunnerVersion"
+    androidTestImplementation "androidx.test:rules:$rootProject.ruleVersion"
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+
+    //BUTTER_KNIFE
+    implementation "com.jakewharton:butterknife:$rootProject.butterKnifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterKnifeVersion"
+    kapt "com.jakewharton:butterknife-compiler:$rootProject.butterKnifeVersion"
+
+
+    //ROOM
+    implementation "androidx.room:room-runtime:$rootProject.roomVersion"
+    implementation "androidx.room:room-ktx:$rootProject.roomVersion"
+    implementation "androidx.room:room-rxjava2:$rootProject.roomVersion"
+    annotationProcessor "android.arch.persistence.room:compiler:$rootProject.roomVersion"
+    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+    androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
+
+    //RapidFloatingActionButton
+    implementation "com.github.wangjiegulu:rfab:$rootProject.rfabVersion"
+
+    // Lifecycle components
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.archLifecycleVersion"
+    kapt "androidx.lifecycle:lifecycle-compiler:$rootProject.archLifecycleVersion"
+    androidTestImplementation "androidx.arch.core:core-testing:$rootProject.androidxArchVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.archLifecycleVersion"
+
+    //EASY PERMISSIONS
+    implementation "pub.devrel:easypermissions:$rootProject.easyPermVersion"
+
+    // RxJava and RxAndroid
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroidVersion"
+
+    // RxBinding
+    implementation "com.jakewharton.rxbinding2:rxbinding-kotlin:$rootProject.rxBindingVersion"
+    implementation "com.jakewharton.rxbinding2:rxbinding-support-v4-kotlin:$rootProject.rxBindingVersion"
+    implementation "com.jakewharton.rxbinding2:rxbinding-appcompat-v7-kotlin:$rootProject.rxBindingVersion"
+
+    //GLIDE
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+
+    //RETROFIT
+    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofitVersion"
+
+    //MULTI_DEX
+    implementation "androidx.multidex:multidex:$rootProject.multidexVersion"
+
+    //MAP_BOX API
+    implementation "com.mapbox.mapboxsdk:mapbox-android-sdk:$rootProject.mapBoxVersion"
+    implementation "com.mapbox.mapboxsdk:mapbox-android-plugin-annotation-v8:$rootProject.mapBoxPluginVersion"
+
+    //IMAGE SLIDER
+    implementation "com.github.smarteist:autoimageslider:$rootProject.imageSliderVersion"
+
+    //FIREBASE
+    implementation "com.google.firebase:firebase-storage:$rootProject.firebaseStorageVersion"
+    implementation "com.google.firebase:firebase-auth:$rootProject.firebaseAuthVersion"
+    implementation "com.google.firebase:firebase-firestore:$rootProject.firebaseFirestoreVersion"
+
 }
