@@ -9,7 +9,7 @@ import com.openclassrooms.realestatemanager.utils.TypeFacility
  * Brussels
  */
 
-data class DetailsProperty(
+data class SubProperty(
         val id: String,
         val type: String,
         val price: Double?,
