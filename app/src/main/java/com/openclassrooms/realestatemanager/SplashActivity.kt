@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.openclassrooms.realestatemanager.mainActivity.MainActivity
 
 class SplashActivity : AppCompatActivity() {
     private val SPLASH_TIME_OUT: Long = 10000 //3 second

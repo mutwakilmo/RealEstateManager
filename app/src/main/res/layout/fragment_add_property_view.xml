@@ -64,7 +64,7 @@
                 android:id="@+id/add_property_view_surface_layout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:hint="@string/surface_m2"
+                android:hint="@string/surface_square_meter"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/add_property_view_price_layout"
                 app:layout_constraintTop_toBottomOf="@id/add_property_view_type_input_layout"
