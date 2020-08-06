@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size_item_rv_pic_added"
+    android:layout_marginTop="@dimen/margin_card_big"
+    android:orientation="vertical"
+    app:cardCornerRadius="7dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/pictures_added_rv_picture"
+            android:layout_width="@dimen/size_item_rv_pic_added"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/pictures_added_rv_delete_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.7"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toBottomOf="@id/pictures_added_rv_picture"
+            app:layout_constraintEnd_toEndOf="@id/pictures_added_rv_picture"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintStart_toStartOf="@id/pictures_added_rv_picture" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pictures_added_rv_input_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/margin_small"
+            android:hint="@string/description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/pictures_added_rv_drag"
+            app:layout_constraintStart_toEndOf="@id/pictures_added_rv_picture"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/pictures_added_rv_description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="10sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageButton
+            android:id="@+id/pictures_added_rv_delete"
+            android:layout_width="25dip"
+            android:layout_height="25dip"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/delete_icon"
+            app:layout_constraintBottom_toBottomOf="@id/pictures_added_rv_delete_button"
+            app:layout_constraintEnd_toEndOf="@id/pictures_added_rv_delete_button"
+            app:layout_constraintStart_toStartOf="@id/pictures_added_rv_delete_button"
+            app:layout_constraintTop_toTopOf="@id/pictures_added_rv_delete_button" />
+
+        <ImageButton
+            android:id="@+id/pictures_added_rv_drag"
+            android:layout_width="25dip"
+            android:layout_height="25dip"
+            android:layout_gravity="end"
+            android:layout_margin="@dimen/margin_small"
+            android:background="@drawable/drag_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/pictures_added_rv_foreground"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.3"
+            android:background="@color/colorAccentLight"
+            android:focusable="false"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

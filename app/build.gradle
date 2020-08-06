@@ -7,7 +7,7 @@ android {
     compileSdkVersion 30
     defaultConfig {
         applicationId "com.openclassrooms.realestatemanager"
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -30,29 +30,27 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.0.0'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation "androidx.core:core-ktx:$rootProject.coreKtxVersion"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.liveDataKtxVersion"
+
     //lottie animation
     def lottieVersion = "3.4.0"
     implementation "com.airbnb.android:lottie:$lottieVersion"
 
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "androidx.core:core-ktx:$rootProject.coreKtxVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.liveDataKtxVersion"
+
     //DESIGN
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
-    implementation 'androidx.viewpager2:viewpager2:1.0.0'
-    implementation 'com.google.android.material:material:1.3.0-alpha02'
+    implementation 'com.google.android.material:material:1.1.0-alpha09'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
     //ROBOLECTRIC
     testImplementation "org.robolectric:robolectric:$rootProject.robolectricVersion"
-
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     //TEST
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoCoreVersion"
@@ -61,13 +59,14 @@ dependencies {
     testImplementation "androidx.test.ext:junit:$rootProject.testJUnitVersion"
     testImplementation "androidx.test:runner:$rootProject.testRunnerVersion"
     androidTestImplementation "androidx.test:rules:$rootProject.ruleVersion"
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
 
     //BUTTER_KNIFE
     implementation "com.jakewharton:butterknife:$rootProject.butterKnifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterKnifeVersion"
     kapt "com.jakewharton:butterknife-compiler:$rootProject.butterKnifeVersion"
 
+    //RapidFloatingActionButton FAB
+    implementation "com.github.wangjiegulu:rfab:$rootProject.rfabVersion"
 
     //ROOM
     implementation "androidx.room:room-runtime:$rootProject.roomVersion"
@@ -77,17 +76,11 @@ dependencies {
     kapt "androidx.room:room-compiler:$rootProject.roomVersion"
     androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
 
-    //RapidFloatingActionButton
-    implementation "com.github.wangjiegulu:rfab:$rootProject.rfabVersion"
-
     // Lifecycle components
     implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.archLifecycleVersion"
     kapt "androidx.lifecycle:lifecycle-compiler:$rootProject.archLifecycleVersion"
     androidTestImplementation "androidx.arch.core:core-testing:$rootProject.androidxArchVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.archLifecycleVersion"
-
-    //EASY PERMISSIONS
-    implementation "pub.devrel:easypermissions:$rootProject.easyPermVersion"
 
     // RxJava and RxAndroid
     implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxJavaVersion"
@@ -97,6 +90,9 @@ dependencies {
     implementation "com.jakewharton.rxbinding2:rxbinding-kotlin:$rootProject.rxBindingVersion"
     implementation "com.jakewharton.rxbinding2:rxbinding-support-v4-kotlin:$rootProject.rxBindingVersion"
     implementation "com.jakewharton.rxbinding2:rxbinding-appcompat-v7-kotlin:$rootProject.rxBindingVersion"
+
+    //EASY PERMISSIONS
+    implementation "pub.devrel:easypermissions:$rootProject.easyPermVersion"
 
     //GLIDE
     implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
@@ -110,7 +106,7 @@ dependencies {
     //MULTI_DEX
     implementation "androidx.multidex:multidex:$rootProject.multidexVersion"
 
-    //MAP_BOX API
+    //MAP_BOX
     implementation "com.mapbox.mapboxsdk:mapbox-android-sdk:$rootProject.mapBoxVersion"
     implementation "com.mapbox.mapboxsdk:mapbox-android-plugin-annotation-v8:$rootProject.mapBoxPluginVersion"
 
@@ -121,5 +117,4 @@ dependencies {
     implementation "com.google.firebase:firebase-storage:$rootProject.firebaseStorageVersion"
     implementation "com.google.firebase:firebase-auth:$rootProject.firebaseAuthVersion"
     implementation "com.google.firebase:firebase-firestore:$rootProject.firebaseFirestoreVersion"
-
 }

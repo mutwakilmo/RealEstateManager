@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    tools:context=".listProperties.MapPropertyView">
+
+
+    <com.mapbox.mapboxsdk.maps.MapView
+        android:id="@+id/map_view_map"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        mapbox:mapbox_cameraZoom="14"
+        mapbox:layout_constraintTop_toTopOf="parent"
+        mapbox:layout_constraintBottom_toBottomOf="parent"
+        mapbox:layout_constraintStart_toStartOf="parent"
+        mapbox:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/map_view_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/center_camera_on_location"
+        android:layout_gravity="top|center"
+        android:layout_margin="@dimen/margin_small"
+        android:textSize="@dimen/small_text"
+        android:visibility="invisible"
+        android:backgroundTint="@color/colorAccent"
+        mapbox:layout_constraintTop_toTopOf="@id/map_view_map"
+        mapbox:layout_constraintStart_toStartOf="@id/map_view_map"
+        mapbox:layout_constraintEnd_toEndOf="@id/map_view_map"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
