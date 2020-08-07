@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import com.openclassrooms.realestatemanager.R
 import java.util.*
 
+
 /**
  * Created by Mutwakil-Mo 🤩
  * Android Engineer,

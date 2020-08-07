@@ -1,4 +1,6 @@
 package com.openclassrooms.realestatemanager.addProperty
+
+
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -7,11 +9,13 @@ import com.openclassrooms.realestatemanager.currency.BaseCurrencyActivity
 import com.openclassrooms.realestatemanager.currency.BaseCurrencyIntent
 import com.openclassrooms.realestatemanager.utils.ACTION_TYPE_ADD_PROPERTY
 
+
 /**
  * Created by Mutwakil-Mo 🤩
  * Android Engineer,
  * Brussels
  */
+
 class AddPropertyActivity : BaseCurrencyActivity<AddPropertyView>() {
 
     private lateinit var actionType: String
@@ -37,7 +41,7 @@ class AddPropertyActivity : BaseCurrencyActivity<AddPropertyView>() {
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId){
             R.id.menu_toolbar_currency -> {
                 viewModel.actionFromIntent(BaseCurrencyIntent.ChangeCurrencyIntent)
