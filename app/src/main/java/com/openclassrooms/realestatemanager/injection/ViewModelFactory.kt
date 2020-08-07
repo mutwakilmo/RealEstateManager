@@ -2,10 +2,17 @@ package com.openclassrooms.realestatemanager.injection
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.openclassrooms.realestatemanager.addAgent.AddAgentViewModel
+import com.openclassrooms.realestatemanager.addProperty.AddPropertyViewModel
+import com.openclassrooms.realestatemanager.currency.BaseCurrencyViewModel
 import com.openclassrooms.realestatemanager.data.repository.AgentRepository
 import com.openclassrooms.realestatemanager.data.repository.CurrencyRepository
 import com.openclassrooms.realestatemanager.data.repository.PropertyRepository
 import com.openclassrooms.realestatemanager.data.repository.SaveDataRepository
+import com.openclassrooms.realestatemanager.detailsProperty.DetailsPropertyViewModel
+import com.openclassrooms.realestatemanager.listProperties.ListPropertyViewModel
+import com.openclassrooms.realestatemanager.mainActivity.MainActivityViewModel
+import com.openclassrooms.realestatemanager.searchProperty.SearchPropertyViewModel
 
 /**
  * Created by Mutwakil-Mo 🤩
