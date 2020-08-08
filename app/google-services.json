@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "900989264160",
+    "firebase_url": "https://realestatemanager-e3532.firebaseio.com",
+    "project_id": "realestatemanager-e3532",
+    "storage_bucket": "realestatemanager-e3532.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:900989264160:android:e130550431ced22ca9b745",
+        "android_client_info": {
+          "package_name": "com.openclassrooms.realestatemanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "900989264160-f8fc5m3ca053sbq82oh79d61mkasoig9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4oO6EyEsHxFVDKwzSjFfi6sbYsh1645w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "900989264160-f8fc5m3ca053sbq82oh79d61mkasoig9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -9,6 +9,7 @@ import butterknife.BindView
 import butterknife.ButterKnife
 import com.openclassrooms.realestatemanager.R
 
+
 /**
  * Created by Mutwakil-Mo 🤩
  * Android Engineer,

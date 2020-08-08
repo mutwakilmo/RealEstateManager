@@ -1,6 +1,6 @@
 package com.openclassrooms.realestatemanager.addAgent
 
-import android.app.Activity
+import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.os.Bundle
 import android.provider.MediaStore
@@ -20,8 +20,9 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.textfield.TextInputLayout
 import com.openclassrooms.realestatemanager.R
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERView
+import com.openclassrooms.realestatemanager.addAgent.ErrorSourceAddAgent.*
 import com.openclassrooms.realestatemanager.injection.Injection
+import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERView
 import com.openclassrooms.realestatemanager.utils.*
 import com.openclassrooms.realestatemanager.utils.extensions.saveToInternalStorage
 import pub.devrel.easypermissions.EasyPermissions
@@ -64,7 +65,7 @@ class AddAgentView : Fragment(), REALESTATEMANAGERView<AddAgentViewState>, EasyP
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode == RC_CHOOSE_PHOTO){
-            if(resultCode == Activity.RESULT_OK){
+            if(resultCode == RESULT_OK){
                 data?.let{
                     savePicturePicked(it)
                 }
@@ -129,7 +130,7 @@ class AddAgentView : Fragment(), REALESTATEMANAGERView<AddAgentViewState>, EasyP
     }
 
     private fun renderPropertyAddedToDB(){
-        activity!!.setResult(Activity.RESULT_OK)
+        activity!!.setResult(RESULT_OK)
         activity!!.finish()
     }
 
@@ -137,12 +138,12 @@ class AddAgentView : Fragment(), REALESTATEMANAGERView<AddAgentViewState>, EasyP
         disableAllErrors()
         errors.forEach{
             when(it){
-                ErrorSourceAddAgent.FIRST_NAME_INCORRECT -> firstNameLayout.error = getString(R.string.error_message_first_name)
-                ErrorSourceAddAgent.LAST_NAME_INCORRECT -> lastNameLayout.error = getString(R.string.error_message_last_name)
-                ErrorSourceAddAgent.EMAIL_INCORRECT -> emailLayout.error = getString(R.string.error_message_email)
-                ErrorSourceAddAgent.PHONE_INCORRECT -> phoneNumberLayout.error = getString(R.string.error_message_phone)
-                ErrorSourceAddAgent.UNKNOWN_ERROR -> showSnackBarMessage(getString(R.string.unknown_error))
-                ErrorSourceAddAgent.UPDATING_PICTURE -> showSnackBarMessage(getString(R.string.error_update_server))
+                FIRST_NAME_INCORRECT -> firstNameLayout.error = getString(R.string.error_message_first_name)
+                LAST_NAME_INCORRECT -> lastNameLayout.error = getString(R.string.error_message_last_name)
+                EMAIL_INCORRECT -> emailLayout.error = getString(R.string.error_message_email)
+                PHONE_INCORRECT -> phoneNumberLayout.error = getString(R.string.error_message_phone)
+                UNKNOWN_ERROR -> showSnackBarMessage(getString(R.string.unknown_error))
+                UPDATING_PICTURE -> showSnackBarMessage(getString(R.string.error_update_server))
             }
         }
     }

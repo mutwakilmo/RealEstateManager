@@ -15,7 +15,6 @@ import com.openclassrooms.realestatemanager.utils.ACTION_TYPE_ADD_PROPERTY
  * Android Engineer,
  * Brussels
  */
-
 class AddPropertyActivity : BaseCurrencyActivity<AddPropertyView>() {
 
     private lateinit var actionType: String
@@ -30,7 +29,7 @@ class AddPropertyActivity : BaseCurrencyActivity<AddPropertyView>() {
     }
 
     private fun configureActionType(){
-        actionType = intent.getStringExtra(ACTION_TYPE_ADD_PROPERTY)
+        actionType = intent.getStringExtra(ACTION_TYPE_ADD_PROPERTY).toString()
     }
 
 

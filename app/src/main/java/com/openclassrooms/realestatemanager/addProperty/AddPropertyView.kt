@@ -1,6 +1,6 @@
 package com.openclassrooms.realestatemanager.addProperty
 
-import android.app.Activity.RESULT_OK
+import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -13,11 +13,9 @@ import android.widget.*
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.FileProvider
 import androidx.core.os.bundleOf
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.ItemTouchHelper
-import androidx.recyclerview.widget.ItemTouchHelper.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import butterknife.BindView
@@ -28,17 +26,13 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.textfield.TextInputLayout
 import com.openclassrooms.realestatemanager.BuildConfig
 import com.openclassrooms.realestatemanager.R
-import com.openclassrooms.realestatemanager.addProperty.ErrorSourceAddProperty.*
+import com.openclassrooms.realestatemanager.base.BaseFragmentREALSTATEMANAGER
+import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERView
 import com.openclassrooms.realestatemanager.data.entity.Agent
 import com.openclassrooms.realestatemanager.data.entity.Picture
 import com.openclassrooms.realestatemanager.injection.Injection
-import com.openclassrooms.realestatemanager.base.BaseFragmentREALSTATEMANAGER
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERView
 import com.openclassrooms.realestatemanager.utils.*
 import com.openclassrooms.realestatemanager.utils.Currency
-import com.openclassrooms.realestatemanager.utils.Currency.DOLLAR
-import com.openclassrooms.realestatemanager.utils.Currency.EURO
-import com.openclassrooms.realestatemanager.utils.TypeFacility.*
 import com.openclassrooms.realestatemanager.utils.extensions.*
 import kotlinx.android.synthetic.main.dialog_photo_source.view.*
 import java.io.File
@@ -397,7 +391,7 @@ class AddPropertyView : BaseFragmentREALSTATEMANAGER(), REALESTATEMANAGERView<Ad
     private fun renderChangeCurrency(currency: Currency){
         when(currency){
             Currency.EURO -> {
-                surfaceLayout.hint = getString(R.string.surface_m2)
+                surfaceLayout.hint = getString(R.string.surface_square_meter)
                 priceLayout.hint = getString(R.string.price_euros)
             }
             Currency.DOLLAR -> {
@@ -425,8 +419,8 @@ class AddPropertyView : BaseFragmentREALSTATEMANAGER(), REALESTATEMANAGERView<Ad
                 ErrorSourceAddProperty.ERROR_FETCHING_AGENTS -> showSnackBarMessage(getString(R.string.error_finding_agents))
                 ErrorSourceAddProperty.TOO_MANY_ADDRESS -> addressLayout.error = getString(R.string.incorrect_address)
                 ErrorSourceAddProperty.INCORECT_ADDRESS -> addressLayout.error = getString(R.string.incorrect_address)
-                ErrorSourceAddProperty.UNKNOWN_ERROR -> showSnackBarMessage(getString(R.string.unknow_error))
-                ErrorSourceAddProperty.ERROR_FETCHING_PROPERTY -> showSnackBarMessage(getString(R.string.unknow_error))
+                ErrorSourceAddProperty.UNKNOWN_ERROR -> showSnackBarMessage(getString(R.string.unknown_error))
+                ErrorSourceAddProperty.ERROR_FETCHING_PROPERTY -> showSnackBarMessage(getString(R.string.unknown_error))
                 ErrorSourceAddProperty.MISSING_DESCRIPTION -> adapter.showErrorViewHolder(getString(R.string.no_description))
                 ErrorSourceAddProperty.ERROR_FETCHING_MAP -> showSnackBarMessage(getString(R.string.error_update_server))
                 ErrorSourceAddProperty.UPLOAD_PICTURE -> showSnackBarMessage(getString(R.string.error_update_server))

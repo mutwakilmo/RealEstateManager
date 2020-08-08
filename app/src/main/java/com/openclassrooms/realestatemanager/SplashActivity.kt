@@ -16,7 +16,7 @@ class SplashActivity : AppCompatActivity() {
 
         Handler().postDelayed({
             //This method will be executed once the timer is over
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
             //close this activity
             finish()
         }, SPLASH_TIME_OUT)

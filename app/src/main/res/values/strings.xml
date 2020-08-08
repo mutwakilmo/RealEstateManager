@@ -147,5 +147,8 @@
     <string name="nb_properties_added">%s properties were added</string>
     <string name="no_new_property">No new property</string>
     <string name="internet_need">You need internet to add an agent</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="to_reset_password_enter_your_email_press_the_button_and_check_mail_to_follow_instruction">To reset password, enter your email, press the button and check mail to follow instruction.</string>
+    <string name="reset_password">Reset Password</string>
 
 </resources>

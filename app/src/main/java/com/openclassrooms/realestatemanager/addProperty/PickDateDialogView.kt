@@ -14,11 +14,9 @@ import androidx.fragment.app.Fragment
 import com.openclassrooms.realestatemanager.R
 import java.util.*
 
-
 /**
- * Created by Mutwakil-Mo 🤩
- * Android Engineer,
- * Brussels
+ * A simple [Fragment] subclass.
+ *
  */
 class PickDateDialogView(private val dateViewId: View, private var existingDate: Calendar?) :
         DialogFragment(), DialogInterface.OnClickListener, DatePickerDialog.OnDateSetListener {
@@ -44,9 +42,9 @@ class PickDateDialogView(private val dateViewId: View, private var existingDate:
         val year = existingDate!!.get(Calendar.YEAR)
         val month = existingDate!!.get(Calendar.MONTH)
         val day = existingDate!!.get(Calendar.DAY_OF_MONTH)
-        datePickerDialog = DatePickerDialog(context, this, year, month, day)
-        datePickerDialog.setButton(DialogInterface.BUTTON_POSITIVE, getString(R.string.ok_button), this)
-        datePickerDialog.setButton(DialogInterface.BUTTON_NEGATIVE, getString(R.string.cancel_button), this)
+        datePickerDialog = context?.let { DatePickerDialog(it,this,year,month,day) }!!
+        datePickerDialog.setButton(BUTTON_POSITIVE, getString(R.string.ok_button), this)
+        datePickerDialog.setButton(BUTTON_NEGATIVE, getString(R.string.cancel_button), this)
 
         // Create a new instance of DatePickerDialog and return it
         return datePickerDialog
@@ -62,12 +60,12 @@ class PickDateDialogView(private val dateViewId: View, private var existingDate:
     }
 
     override fun onClick(dialog: DialogInterface?, button: Int) {
-        if(button == DialogInterface.BUTTON_POSITIVE){
+        if(button == BUTTON_POSITIVE){
             setDate()
             callback.onOkButtonListener(pickedDate, dateViewId)
         }
 
-        if(button == DialogInterface.BUTTON_NEGATIVE){
+        if(button == BUTTON_NEGATIVE){
             dialog?.cancel()
         }
     }
