@@ -1,10 +1,11 @@
 package com.openclassrooms.realestatemanager.addAgent
 
+import com.openclassrooms.realestatemanager.addAgent.ErrorSourceAddAgent.*
+import com.openclassrooms.realestatemanager.data.entity.Agent
+import com.openclassrooms.realestatemanager.data.repository.AgentRepository
 import com.openclassrooms.realestatemanager.base.BaseViewModel
 import com.openclassrooms.realestatemanager.base.LoadingContentError
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewModel
-import com.openclassrooms.realestatemanager.data.entity.Agent
-import com.openclassrooms.realestatemanager.data.repository.AgentRepository
 import com.openclassrooms.realestatemanager.utils.extensions.isCorrectEmail
 import com.openclassrooms.realestatemanager.utils.extensions.isCorrectName
 import com.openclassrooms.realestatemanager.utils.extensions.isCorrectPhoneNumber
@@ -90,10 +91,10 @@ class AddAgentViewModel (
 
         fun checkErrors(): List<ErrorSourceAddAgent>{
             val listErrorInputs = mutableListOf<ErrorSourceAddAgent>()
-            if(!firstName.isCorrectName()) listErrorInputs.add(ErrorSourceAddAgent.FIRST_NAME_INCORRECT)
-            if(!lastName.isCorrectName()) listErrorInputs.add(ErrorSourceAddAgent.LAST_NAME_INCORRECT)
-            if(!email.isCorrectEmail()) listErrorInputs.add(ErrorSourceAddAgent.EMAIL_INCORRECT)
-            if(!phoneNumber.isCorrectPhoneNumber()) listErrorInputs.add(ErrorSourceAddAgent.PHONE_INCORRECT)
+            if(!firstName.isCorrectName()) listErrorInputs.add(FIRST_NAME_INCORRECT)
+            if(!lastName.isCorrectName()) listErrorInputs.add(LAST_NAME_INCORRECT)
+            if(!email.isCorrectEmail()) listErrorInputs.add(EMAIL_INCORRECT)
+            if(!phoneNumber.isCorrectPhoneNumber()) listErrorInputs.add(PHONE_INCORRECT)
 
             return listErrorInputs
         }
@@ -118,7 +119,7 @@ class AddAgentViewModel (
 
         fun updatePictureToNetwork(pictureUrl: String){
             agentRepository.uploadAgentPhotoInNetwork(pictureUrl, agentId)
-                    .addOnFailureListener { listErrors.add(ErrorSourceAddAgent.UPDATING_PICTURE) }
+                    .addOnFailureListener { listErrors.add(UPDATING_PICTURE) }
         }
 
 
@@ -131,3 +132,4 @@ class AddAgentViewModel (
 
     }
 }
+
