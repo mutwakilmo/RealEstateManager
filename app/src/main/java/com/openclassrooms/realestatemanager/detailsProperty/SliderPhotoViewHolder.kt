@@ -11,6 +11,7 @@ import com.openclassrooms.realestatemanager.data.entity.Picture
 import com.openclassrooms.realestatemanager.utils.extensions.loadImage
 import com.smarteist.autoimageslider.SliderViewAdapter
 
+
 /**
  * Created by Mutwakil-Mo 🤩
  * Android Engineer,
@@ -18,17 +19,15 @@ import com.smarteist.autoimageslider.SliderViewAdapter
  */
 class SliderPhotoViewHolder(itemView: View) : SliderViewAdapter.ViewHolder(itemView) {
 
-    @BindView(R.id.iv_auto_image_slider)
-    lateinit var imageViewBackground: ImageView
-    @BindView(R.id.tv_auto_image_slider)
-    lateinit var textViewDescription: TextView
+    @BindView(R.id.iv_auto_image_slider) lateinit var imageViewBackground: ImageView
+    @BindView(R.id.tv_auto_image_slider) lateinit var textViewDescription: TextView
 
     init {
         ButterKnife.bind(this, itemView)
 
     }
 
-    fun updateWithPicture(picture: Picture, glide: RequestManager) {
+    fun updateWithPicture(picture: Picture, glide: RequestManager){
         imageViewBackground.loadImage(picture.url, picture.serverUrl, glide)
         textViewDescription.text = picture.description
     }

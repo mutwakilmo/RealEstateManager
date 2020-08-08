@@ -1,12 +1,13 @@
 package com.openclassrooms.realestatemanager.detailsProperty
 
+
 import androidx.lifecycle.LiveData
-import com.openclassrooms.realestatemanager.base.BaseViewModel
-import com.openclassrooms.realestatemanager.base.LoadingContentError
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewModel
 import com.openclassrooms.realestatemanager.data.entity.PropertyWithAllData
 import com.openclassrooms.realestatemanager.data.repository.CurrencyRepository
 import com.openclassrooms.realestatemanager.data.repository.PropertyRepository
+import com.openclassrooms.realestatemanager.base.BaseViewModel
+import com.openclassrooms.realestatemanager.base.LoadingContentError
+import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewModel
 import com.openclassrooms.realestatemanager.utils.Currency
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch

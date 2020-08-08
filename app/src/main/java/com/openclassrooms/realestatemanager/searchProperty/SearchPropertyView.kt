@@ -1,5 +1,6 @@
 package com.openclassrooms.realestatemanager.searchProperty
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -33,13 +34,9 @@ import com.openclassrooms.realestatemanager.utils.Currency.EURO
 import com.openclassrooms.realestatemanager.utils.extensions.*
 import java.util.*
 
-
 /**
- * Created by Mutwakil-Mo 🤩
- * Android Engineer,
- * Brussels
+ * A simple [Fragment] subclass.
  */
-
 class SearchPropertyView : BaseFragmentREALSTATEMANAGER(), REALESTATEMANAGERView<SeachPropertyViewState>, ListAgentSearchAdapter.ListenerCheckBox,
         PickDateDialogView.OnOkButtonListener{
 
@@ -212,6 +209,7 @@ class SearchPropertyView : BaseFragmentREALSTATEMANAGER(), REALESTATEMANAGERView
 
         viewModel.viewState.observe(this, Observer { render(it) })
     }
+
     private fun currencyObserver(){
         viewModel.currency.observe(this, Observer {currency ->
             currentCurrency = currency
@@ -240,11 +238,11 @@ class SearchPropertyView : BaseFragmentREALSTATEMANAGER(), REALESTATEMANAGERView
 
     private fun renderChangeCurrency(currency: Currency){
         when(currency){
-            Currency.EURO -> {
+            EURO -> {
                 surfaceTitle.text = getString(R.string.surface_square_meter)
                 priceTitle.text = getString(R.string.price_euros)
             }
-            Currency.DOLLAR -> {
+            DOLLAR -> {
                 surfaceTitle.text = getString(R.string.surface_ft2)
                 priceTitle.text = getString(R.string.price_dollar)
             }

@@ -5,14 +5,15 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'com.google.gms.google-services'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 28
+    testOptions.unitTests.includeAndroidResources = true
     defaultConfig {
         applicationId "com.openclassrooms.realestatemanager"
         minSdkVersion 19
-        targetSdkVersion 30
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
     buildTypes {
@@ -22,7 +23,6 @@ android {
             buildConfigField('String', "GoogleMapApiKey", googleMapApiKey)
             buildConfigField('String', "MapBoxToken", mapBoxToken)
             buildConfigField('String', "AppName", appName)
-
         }
         debug {
             buildConfigField('String', "GoogleMapApiKey", googleMapApiKey)
@@ -30,7 +30,6 @@ android {
             buildConfigField('String', "AppName", appName)
 
         }
-
     }
 
     compileOptions {
@@ -46,13 +45,16 @@ dependencies {
     //lottie animation
     def lottieVersion = "3.4.0"
     implementation "com.airbnb.android:lottie:$lottieVersion"
+    implementation 'com.google.firebase:firebase-auth:19.3.2'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation "androidx.core:core-ktx:$rootProject.coreKtxVersion"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.liveDataKtxVersion"
-
+    def fragment_version = "1.2.5"
+    // Kotlin
+    implementation "androidx.fragment:fragment-ktx:$fragment_version"
     //DESIGN
     implementation 'com.google.android.material:material:1.1.0-alpha09'
     implementation 'androidx.cardview:cardview:1.0.0'
@@ -72,12 +74,12 @@ dependencies {
     testImplementation "androidx.test:runner:$rootProject.testRunnerVersion"
     androidTestImplementation "androidx.test:rules:$rootProject.ruleVersion"
 
-    //BUTTER_KNIFE
+    //BUTTERKNIFE
     implementation "com.jakewharton:butterknife:$rootProject.butterKnifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterKnifeVersion"
     kapt "com.jakewharton:butterknife-compiler:$rootProject.butterKnifeVersion"
 
-    //RapidFloatingActionButton FAB
+    //RAPIDE FAB
     implementation "com.github.wangjiegulu:rfab:$rootProject.rfabVersion"
 
     //ROOM
@@ -115,10 +117,10 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofitVersion"
 
-    //MULTI_DEX
+    //MULTIDEX
     implementation "androidx.multidex:multidex:$rootProject.multidexVersion"
 
-    //MAP_BOX
+    //MAPBOX
     implementation "com.mapbox.mapboxsdk:mapbox-android-sdk:$rootProject.mapBoxVersion"
     implementation "com.mapbox.mapboxsdk:mapbox-android-plugin-annotation-v8:$rootProject.mapBoxPluginVersion"
 
@@ -129,5 +131,10 @@ dependencies {
     implementation "com.google.firebase:firebase-storage:$rootProject.firebaseStorageVersion"
     implementation "com.google.firebase:firebase-auth:$rootProject.firebaseAuthVersion"
     implementation "com.google.firebase:firebase-firestore:$rootProject.firebaseFirestoreVersion"
-    implementation 'com.google.firebase:firebase-auth:19.3.2'
+
+
+}
+
+kapt {
+    generateStubs = true
 }

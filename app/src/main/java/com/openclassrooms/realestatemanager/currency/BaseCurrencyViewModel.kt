@@ -1,9 +1,9 @@
 package com.openclassrooms.realestatemanager.currency
 
+import com.openclassrooms.realestatemanager.data.repository.CurrencyRepository
 import com.openclassrooms.realestatemanager.base.BaseViewModel
 import com.openclassrooms.realestatemanager.base.LoadingContentError
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewModel
-import com.openclassrooms.realestatemanager.data.repository.CurrencyRepository
 
 /**
  * Created by Mutwakil-Mo 🤩

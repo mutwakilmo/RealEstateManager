@@ -7,6 +7,7 @@ import com.openclassrooms.realestatemanager.listProperties.ActionTypeList
 import com.openclassrooms.realestatemanager.listProperties.ListPropertyView
 import com.openclassrooms.realestatemanager.listProperties.MapPropertyView
 
+
 /**
  * Created by Mutwakil-Mo 🤩
  * Android Engineer,

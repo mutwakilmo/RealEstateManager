@@ -4,9 +4,9 @@ import android.content.Context
 import android.graphics.Bitmap
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.openclassrooms.realestatemanager.base.BaseViewModel
-import com.openclassrooms.realestatemanager.base.LoadingContentError
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewModel
+import com.openclassrooms.realestatemanager.addProperty.ActionType.MODIFY_PROPERTY
+import com.openclassrooms.realestatemanager.addProperty.ActionType.NEW_PROPERTY
+import com.openclassrooms.realestatemanager.addProperty.ErrorSourceAddProperty.*
 import com.openclassrooms.realestatemanager.data.SubProperty
 import com.openclassrooms.realestatemanager.data.api.model.GeoApiResponse
 import com.openclassrooms.realestatemanager.data.database.Converters
@@ -15,6 +15,9 @@ import com.openclassrooms.realestatemanager.data.repository.AgentRepository
 import com.openclassrooms.realestatemanager.data.repository.CurrencyRepository
 import com.openclassrooms.realestatemanager.data.repository.PropertyRepository
 import com.openclassrooms.realestatemanager.data.repository.SaveDataRepository
+import com.openclassrooms.realestatemanager.base.BaseViewModel
+import com.openclassrooms.realestatemanager.base.LoadingContentError
+import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewModel
 import com.openclassrooms.realestatemanager.utils.*
 import com.openclassrooms.realestatemanager.utils.extensions.*
 import io.reactivex.disposables.Disposable
@@ -252,7 +255,7 @@ class AddPropertyViewModel (
     }
 
     private fun setDataProperty(){
-        if(actionType == ActionType.MODIFY_PROPERTY){
+        if(actionType == MODIFY_PROPERTY){
             val propertyFromRepository = propertyRepository.propertyPicked!!
             property = propertyFromRepository.property
             address = propertyFromRepository.address[0]
@@ -327,22 +330,22 @@ class AddPropertyViewModel (
             val sellDate = sellOn?.toDate()
 
             if(onMarketDate == null ||
-                    !onMarketDate.isCorrectOnMarketDate()) listErrors.add(ErrorSourceAddProperty.INCORRECT_ON_MARKET_DATE)
+                    !onMarketDate.isCorrectOnMarketDate()) listErrors.add(INCORRECT_ON_MARKET_DATE)
             if(isSold) {
                 if (sellDate == null ||
                         onMarketDate != null
-                        && !sellDate.isCorrectSoldDate(onMarketDate)) listErrors.add(ErrorSourceAddProperty.INCORRECT_SOLD_DATE)
-                if (sellOn == null) listErrors.add(ErrorSourceAddProperty.NO_SOLD_DATE)
+                        && !sellDate.isCorrectSoldDate(onMarketDate)) listErrors.add(INCORRECT_SOLD_DATE)
+                if (sellOn == null) listErrors.add(NO_SOLD_DATE)
             }
-            if(!type.isExistingPropertyType()) listErrors.add(ErrorSourceAddProperty.NO_TYPE_SELECTED)
-            if(price == null) listErrors.add(ErrorSourceAddProperty.NO_PRICE)
-            if(surface == null) listErrors.add(ErrorSourceAddProperty.NO_SURFACE)
-            if(rooms == null) listErrors.add(ErrorSourceAddProperty.NO_ROOMS)
-            if(address.isEmpty()) listErrors.add(ErrorSourceAddProperty.NO_ADDRESS)
-            if(agentId == null) listErrors.add(ErrorSourceAddProperty.NO_AGENT)
+            if(!type.isExistingPropertyType()) listErrors.add(NO_TYPE_SELECTED)
+            if(price == null) listErrors.add(NO_PRICE)
+            if(surface == null) listErrors.add(NO_SURFACE)
+            if(rooms == null) listErrors.add(NO_ROOMS)
+            if(address.isEmpty()) listErrors.add(NO_ADDRESS)
+            if(agentId == null) listErrors.add(NO_AGENT)
             pictures.forEach {
                 if(it.description.isBlank()){
-                    listErrors.add(ErrorSourceAddProperty.MISSING_DESCRIPTION)
+                    listErrors.add(MISSING_DESCRIPTION)
                 }
             }
 
@@ -386,13 +389,13 @@ class AddPropertyViewModel (
                 fetchBitmapMap(mapUrl)
 
             } else {
-                listErrorInputs.add(ErrorSourceAddProperty.ERROR_FETCHING_MAP)
+                listErrorInputs.add(ERROR_FETCHING_MAP)
                 emitErrorFromInputs()
             }
 
 
         } else {
-            listErrorInputs.add(ErrorSourceAddProperty.TOO_MANY_ADDRESS)
+            listErrorInputs.add(TOO_MANY_ADDRESS)
             emitErrorFromInputs()
         }
     }
@@ -402,7 +405,7 @@ class AddPropertyViewModel (
         propertyRepository.uploadMapInNetwork(bitmap, property.id)
                 .addOnSuccessListener { emitResultAddPropertyToView() }
                 .addOnFailureListener {
-                    listErrorInputs.add(ErrorSourceAddProperty.ERROR_FETCHING_MAP)
+                    listErrorInputs.add(ERROR_FETCHING_MAP)
                     emitErrorFromInputs()
                 }
 
@@ -414,14 +417,14 @@ class AddPropertyViewModel (
                 .subscribeWith(getObserverGeocodingApi())
     }
 
-    private fun getObserverGeocodingApi(): DisposableObserver<GeoApiResponse> {
+    private fun getObserverGeocodingApi(): DisposableObserver<GeoApiResponse>{
         return object : DisposableObserver<GeoApiResponse>() {
             override fun onNext(geoApi: GeoApiResponse) {
                 checkLocationAndMap(geoApi)
             }
 
             override fun onError(e: Throwable) {
-                listErrorInputs.add(ErrorSourceAddProperty.INCORECT_ADDRESS)
+                listErrorInputs.add(INCORECT_ADDRESS)
                 emitErrorFromInputs()
             }
 
@@ -470,8 +473,8 @@ class AddPropertyViewModel (
         fun emitResult(){
             val result: LoadingContentError<AddPropertyResult> = if(errorOnPropertyCreation.isEmpty()) {
                 when (actionType) {
-                    ActionType.NEW_PROPERTY -> saveDataRepository.subProperty = null
-                    ActionType.MODIFY_PROPERTY -> saveDataRepository.saveModifiedProperty(null, property.id)
+                    NEW_PROPERTY -> saveDataRepository.subProperty = null
+                    MODIFY_PROPERTY -> saveDataRepository.saveModifiedProperty(null, property.id)
                 }
                 LoadingContentError.Content(AddPropertyResult.PropertyAddedToDBResult(null))
             } else {
@@ -488,7 +491,7 @@ class AddPropertyViewModel (
                 )
                         .addOnSuccessListener { emitResult() }
                         .addOnFailureListener{
-                            errorOnPropertyCreation.add(ErrorSourceAddProperty.UPLOAD_DATA)
+                            errorOnPropertyCreation.add(UPLOAD_DATA)
                             emitResult()
                         }
             }
@@ -496,7 +499,7 @@ class AddPropertyViewModel (
         }
 
         fun orderPictures(){
-            if(actionType == ActionType.MODIFY_PROPERTY && previousPictures.isNotEmpty()){
+            if(actionType == MODIFY_PROPERTY && previousPictures.isNotEmpty()){
                 pictures.forEach { picture ->
                     val previousPicture = previousPictures.find{ it.id == picture.id}
                     if(previousPicture != null){
@@ -536,7 +539,7 @@ class AddPropertyViewModel (
         searchAgentsJob = launch {
             val agents: List<Agent>? = agentRepository.getAllAgents()
             val result: LoadingContentError<AddPropertyResult> = if(agents == null || agents.isEmpty()){
-                val listErrors = listOf(ErrorSourceAddProperty.ERROR_FETCHING_AGENTS)
+                val listErrors = listOf(ERROR_FETCHING_AGENTS)
                 LoadingContentError.Error(AddPropertyResult.ListAgentsResult(null, listErrors))
             } else{
                 LoadingContentError.Content(AddPropertyResult.ListAgentsResult(agents, null))
@@ -569,8 +572,8 @@ class AddPropertyViewModel (
         )
 
         when(actionType){
-            ActionType.NEW_PROPERTY -> saveDataRepository.subProperty = tempProperty
-            ActionType.MODIFY_PROPERTY -> saveDataRepository.saveModifiedProperty(tempProperty, propertyId)
+            NEW_PROPERTY -> saveDataRepository.subProperty = tempProperty
+            MODIFY_PROPERTY -> saveDataRepository.saveModifiedProperty(tempProperty, propertyId)
         }
 
         val result: LoadingContentError<AddPropertyResult> = LoadingContentError.Content(AddPropertyResult.PropertyAddedToDraftResult)
@@ -585,14 +588,14 @@ class AddPropertyViewModel (
         resultToViewState(LoadingContentError.Loading())
 
         val savedProperty = when(actionType){
-            ActionType.NEW_PROPERTY -> saveDataRepository.subProperty
-            ActionType.MODIFY_PROPERTY -> saveDataRepository.getSavedModifyProperty(propertyId)
+            NEW_PROPERTY -> saveDataRepository.subProperty
+            MODIFY_PROPERTY -> saveDataRepository.getSavedModifyProperty(propertyId)
         }
         var agent: Agent? = null
 
         fun emitResult(){
-            val isOriginalAvailable = actionType == ActionType.MODIFY_PROPERTY
-            val result: LoadingContentError<AddPropertyResult> = LoadingContentError.Content(AddPropertyResult.PropertyFromDraftResult(
+            val isOriginalAvailable = actionType == MODIFY_PROPERTY
+            val result: LoadingContentError<AddPropertyResult>  = LoadingContentError.Content(AddPropertyResult.PropertyFromDraftResult(
                     savedProperty!!.type, savedProperty.price, savedProperty.surface, savedProperty.rooms,
                     savedProperty.bedrooms, savedProperty. bathrooms, savedProperty.description, savedProperty.address,
                     savedProperty.neighborhood, savedProperty.onMarketSince, savedProperty.isSold,
@@ -604,8 +607,8 @@ class AddPropertyViewModel (
 
         if(savedProperty == null){
             when(actionType){
-                ActionType.MODIFY_PROPERTY -> fetchExistingPropertyFromDB()
-                ActionType.NEW_PROPERTY -> {
+                MODIFY_PROPERTY -> fetchExistingPropertyFromDB()
+                NEW_PROPERTY -> {
                     val result: LoadingContentError<AddPropertyResult> = LoadingContentError.Content(AddPropertyResult.NewPropertyResult)
                     resultToViewState(result)
                 }

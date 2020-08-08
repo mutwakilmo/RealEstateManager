@@ -1,5 +1,7 @@
 package com.openclassrooms.realestatemanager.detailsProperty
 
+
+
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -30,10 +32,10 @@ import com.openclassrooms.realestatemanager.utils.extensions.*
 import com.smarteist.autoimageslider.IndicatorAnimations
 import com.smarteist.autoimageslider.SliderView
 
+
 /**
- * Created by Mutwakil-Mo 🤩
- * Android Engineer,
- * Brussels
+ * A simple [Fragment] subclass.
+ *
  */
 class DetailsPropertyView : BaseFragmentREALSTATEMANAGER(), REALESTATEMANAGERView<DetailsPropertyViewState> {
 

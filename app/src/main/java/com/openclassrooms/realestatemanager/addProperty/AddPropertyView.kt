@@ -1,6 +1,7 @@
 package com.openclassrooms.realestatemanager.addProperty
 
-import android.app.Activity
+
+import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -13,9 +14,11 @@ import android.widget.*
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.FileProvider
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.ItemTouchHelper.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import butterknife.BindView
@@ -26,13 +29,17 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.textfield.TextInputLayout
 import com.openclassrooms.realestatemanager.BuildConfig
 import com.openclassrooms.realestatemanager.R
-import com.openclassrooms.realestatemanager.base.BaseFragmentREALSTATEMANAGER
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERView
+import com.openclassrooms.realestatemanager.addProperty.ErrorSourceAddProperty.*
 import com.openclassrooms.realestatemanager.data.entity.Agent
 import com.openclassrooms.realestatemanager.data.entity.Picture
 import com.openclassrooms.realestatemanager.injection.Injection
+import com.openclassrooms.realestatemanager.base.BaseFragmentREALSTATEMANAGER
+import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERView
 import com.openclassrooms.realestatemanager.utils.*
 import com.openclassrooms.realestatemanager.utils.Currency
+import com.openclassrooms.realestatemanager.utils.Currency.DOLLAR
+import com.openclassrooms.realestatemanager.utils.Currency.EURO
+import com.openclassrooms.realestatemanager.utils.TypeFacility.*
 import com.openclassrooms.realestatemanager.utils.extensions.*
 import kotlinx.android.synthetic.main.dialog_photo_source.view.*
 import java.io.File
@@ -40,13 +47,12 @@ import java.io.IOException
 import java.util.*
 
 /**
- * Created by Mutwakil-Mo 🤩
- * Android Engineer,
- * Brussels
+ * A simple [Fragment] subclass.
+ *
  */
 class AddPropertyView : BaseFragmentREALSTATEMANAGER(), REALESTATEMANAGERView<AddPropertyViewState>,
         PickDateDialogView.OnOkButtonListener, ListAgentsDialogView.OnAgentSelected, ListPictureAdapter.Listener,
-        SnackBarListener {
+        SnackBarListener{
 
     @BindView(R.id.add_property_view_dropdown_type) lateinit var dropdowPropertyType: AutoCompleteTextView
     @BindView(R.id.add_property_view_price) lateinit var priceText: EditText
@@ -93,7 +99,7 @@ class AddPropertyView : BaseFragmentREALSTATEMANAGER(), REALESTATEMANAGERView<Ad
     private lateinit var adapter: ListPictureAdapter
 
     private val itemTouchHelper by lazy{
-        val touchCallback = object : ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP or ItemTouchHelper.DOWN, ItemTouchHelper.START or ItemTouchHelper.END){
+        val touchCallback = object : ItemTouchHelper.SimpleCallback(UP or DOWN, START or END){
             override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
                 val adapter = recyclerView.adapter as ListPictureAdapter
                 val from = viewHolder.adapterPosition
@@ -107,7 +113,7 @@ class AddPropertyView : BaseFragmentREALSTATEMANAGER(), REALESTATEMANAGERView<Ad
             override fun onSelectedChanged(viewHolder: RecyclerView.ViewHolder?, actionState: Int) {
                 super.onSelectedChanged(viewHolder, actionState)
 
-                if(actionState == ItemTouchHelper.ACTION_STATE_DRAG){
+                if(actionState == ACTION_STATE_DRAG){
                     viewHolder?.itemView?.alpha = 0.5f
                 }
             }
@@ -153,12 +159,12 @@ class AddPropertyView : BaseFragmentREALSTATEMANAGER(), REALESTATEMANAGERView<Ad
         super.onActivityResult(requestCode, resultCode, data)
         when(requestCode){
             RC_CHOOSE_PHOTO -> {
-                if(resultCode == Activity.RESULT_OK){
+                if(resultCode == RESULT_OK){
                     data?.let{addPicturePickedToList(it)}
                 }
             }
             RC_CODE_TAKE_PHOTO -> {
-                if(resultCode == Activity.RESULT_OK){
+                if(resultCode == RESULT_OK){
                     addPictureTakenToList()
                 }
             }
@@ -390,11 +396,11 @@ class AddPropertyView : BaseFragmentREALSTATEMANAGER(), REALESTATEMANAGERView<Ad
 
     private fun renderChangeCurrency(currency: Currency){
         when(currency){
-            Currency.EURO -> {
+            EURO -> {
                 surfaceLayout.hint = getString(R.string.surface_square_meter)
                 priceLayout.hint = getString(R.string.price_euros)
             }
-            Currency.DOLLAR -> {
+            DOLLAR -> {
                 surfaceLayout.hint = getString(R.string.surface_ft2)
                 priceLayout.hint = getString(R.string.price_dollar)
             }
@@ -405,26 +411,26 @@ class AddPropertyView : BaseFragmentREALSTATEMANAGER(), REALESTATEMANAGERView<Ad
     private fun renderErrors(errors: List<ErrorSourceAddProperty>){
         errors.forEach{
             when(it){
-                ErrorSourceAddProperty.NO_TYPE_SELECTED -> typeLayout.error = getString(R.string.incorrect_type)
-                ErrorSourceAddProperty.NO_PRICE -> priceLayout.error = getString(R.string.can_t_be_empty)
-                ErrorSourceAddProperty.NO_SURFACE -> surfaceLayout.error = getString(R.string.can_t_be_empty)
-                ErrorSourceAddProperty.NO_ROOMS -> roomLayout.error = getString(R.string.can_t_be_empty)
-                ErrorSourceAddProperty.NO_ADDRESS -> addressLayout.error = getString(R.string.can_t_be_empty)
-                ErrorSourceAddProperty.NO_NEIGHBORHOOD -> neighbourhoodLayout.error = getString(R.string.can_t_be_empty)
-                ErrorSourceAddProperty.NO_ON_MARKET_DATE -> onMarketSinceLayout.error = getString(R.string.can_t_be_empty)
-                ErrorSourceAddProperty.NO_SOLD_DATE -> soldOnLayout.error = getString(R.string.can_t_be_empty)
-                ErrorSourceAddProperty.NO_AGENT -> agentLayout.error = getString(R.string.can_t_be_empty)
-                ErrorSourceAddProperty.INCORRECT_SOLD_DATE -> soldOnLayout.error = getString(R.string.incorrect_date)
-                ErrorSourceAddProperty.INCORRECT_ON_MARKET_DATE -> onMarketSinceLayout.error = getString(R.string.incorrect_date)
-                ErrorSourceAddProperty.ERROR_FETCHING_AGENTS -> showSnackBarMessage(getString(R.string.error_finding_agents))
-                ErrorSourceAddProperty.TOO_MANY_ADDRESS -> addressLayout.error = getString(R.string.incorrect_address)
-                ErrorSourceAddProperty.INCORECT_ADDRESS -> addressLayout.error = getString(R.string.incorrect_address)
-                ErrorSourceAddProperty.UNKNOWN_ERROR -> showSnackBarMessage(getString(R.string.unknown_error))
-                ErrorSourceAddProperty.ERROR_FETCHING_PROPERTY -> showSnackBarMessage(getString(R.string.unknown_error))
-                ErrorSourceAddProperty.MISSING_DESCRIPTION -> adapter.showErrorViewHolder(getString(R.string.no_description))
-                ErrorSourceAddProperty.ERROR_FETCHING_MAP -> showSnackBarMessage(getString(R.string.error_update_server))
-                ErrorSourceAddProperty.UPLOAD_PICTURE -> showSnackBarMessage(getString(R.string.error_update_server))
-                ErrorSourceAddProperty.UPLOAD_DATA -> showSnackBarMessage(getString(R.string.error_update_server))
+                NO_TYPE_SELECTED -> typeLayout.error = getString(R.string.incorrect_type)
+                NO_PRICE -> priceLayout.error = getString(R.string.can_t_be_empty)
+                NO_SURFACE -> surfaceLayout.error = getString(R.string.can_t_be_empty)
+                NO_ROOMS -> roomLayout.error = getString(R.string.can_t_be_empty)
+                NO_ADDRESS -> addressLayout.error = getString(R.string.can_t_be_empty)
+                NO_NEIGHBORHOOD -> neighbourhoodLayout.error = getString(R.string.can_t_be_empty)
+                NO_ON_MARKET_DATE -> onMarketSinceLayout.error = getString(R.string.can_t_be_empty)
+                NO_SOLD_DATE -> soldOnLayout.error = getString(R.string.can_t_be_empty)
+                NO_AGENT -> agentLayout.error = getString(R.string.can_t_be_empty)
+                INCORRECT_SOLD_DATE -> soldOnLayout.error = getString(R.string.incorrect_date)
+                INCORRECT_ON_MARKET_DATE -> onMarketSinceLayout.error = getString(R.string.incorrect_date)
+                ERROR_FETCHING_AGENTS -> showSnackBarMessage(getString(R.string.error_finding_agents))
+                TOO_MANY_ADDRESS -> addressLayout.error = getString(R.string.incorrect_address)
+                INCORECT_ADDRESS -> addressLayout.error = getString(R.string.incorrect_address)
+                UNKNOWN_ERROR -> showSnackBarMessage(getString(R.string.unknown_error))
+                ERROR_FETCHING_PROPERTY -> showSnackBarMessage(getString(R.string.unknown_error))
+                MISSING_DESCRIPTION -> adapter.showErrorViewHolder(getString(R.string.no_description))
+                ERROR_FETCHING_MAP -> showSnackBarMessage(getString(R.string.error_update_server))
+                UPLOAD_PICTURE -> showSnackBarMessage(getString(R.string.error_update_server))
+                UPLOAD_DATA -> showSnackBarMessage(getString(R.string.error_update_server))
             }
         }
         showSnackBarWithAction(getString(R.string.error_saving), SnackBarAction.SAVE_DRAFT)
@@ -502,14 +508,14 @@ class AddPropertyView : BaseFragmentREALSTATEMANAGER(), REALESTATEMANAGERView<Ad
     ){
         val priceToDisplay = if(price != null) {
             when (currentCurrency!!) {
-                Currency.EURO -> price.toString()
-                Currency.DOLLAR -> price.toDollar().toString()
+                EURO -> price.toString()
+                DOLLAR -> price.toDollar().toString()
             }
         } else ""
         val surfaceToDisplay = if(surface != null) {
             when (currentCurrency!!) {
-                Currency.EURO -> surface.toString()
-                Currency.DOLLAR -> surface.toSqFt().toString()
+                EURO -> surface.toString()
+                DOLLAR -> surface.toSqFt().toString()
             }
         } else ""
         priceText.setText(priceToDisplay)
@@ -531,12 +537,12 @@ class AddPropertyView : BaseFragmentREALSTATEMANAGER(), REALESTATEMANAGERView<Ad
         dropdowAgent.setText(displayNameAgent)
         amenities.forEach {
             when(it){
-                TypeFacility.SCHOOL -> schoolBox.isChecked = true
-                TypeFacility.PLAYGROUND -> playgroundBox.isChecked = true
-                TypeFacility.SHOP -> shopBox.isChecked = true
-                TypeFacility.BUSES -> busesBox.isChecked = true
-                TypeFacility.SUBWAY -> subwayBox.isChecked = true
-                TypeFacility.PARK -> parkBox.isChecked = true
+                SCHOOL -> schoolBox.isChecked = true
+                PLAYGROUND -> playgroundBox.isChecked = true
+                SHOP -> shopBox.isChecked = true
+                BUSES -> busesBox.isChecked = true
+                SUBWAY -> subwayBox.isChecked = true
+                PARK -> parkBox.isChecked = true
             }
         }
 
@@ -554,12 +560,12 @@ class AddPropertyView : BaseFragmentREALSTATEMANAGER(), REALESTATEMANAGERView<Ad
     //--------------------
     private fun getAmenitiesSelected(): List<TypeFacility>{
         val listAmenities = mutableListOf<TypeFacility>()
-        if(schoolBox.isChecked) listAmenities.add(TypeFacility.SCHOOL)
-        if(parkBox.isChecked) listAmenities.add(TypeFacility.PARK)
-        if(busesBox.isChecked) listAmenities.add(TypeFacility.BUSES)
-        if(subwayBox.isChecked) listAmenities.add(TypeFacility.SUBWAY)
-        if(shopBox.isChecked) listAmenities.add(TypeFacility.SHOP)
-        if(playgroundBox.isChecked) listAmenities.add(TypeFacility.PLAYGROUND)
+        if(schoolBox.isChecked) listAmenities.add(SCHOOL)
+        if(parkBox.isChecked) listAmenities.add(PARK)
+        if(busesBox.isChecked) listAmenities.add(BUSES)
+        if(subwayBox.isChecked) listAmenities.add(SUBWAY)
+        if(shopBox.isChecked) listAmenities.add(SHOP)
+        if(playgroundBox.isChecked) listAmenities.add(PLAYGROUND)
 
         return listAmenities
     }

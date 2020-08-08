@@ -5,7 +5,6 @@ import com.openclassrooms.realestatemanager.data.database.Converters
 import com.openclassrooms.realestatemanager.data.entity.*
 import com.openclassrooms.realestatemanager.utils.TypeFacility
 import java.util.*
-
 /**
  * Created by Mutwakil-Mo 🤩
  * Android Engineer,

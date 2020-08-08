@@ -10,6 +10,7 @@ import com.openclassrooms.realestatemanager.currency.BaseCurrencyIntent
 import com.openclassrooms.realestatemanager.utils.ACTION_TYPE_ADD_PROPERTY
 
 
+
 /**
  * Created by Mutwakil-Mo 🤩
  * Android Engineer,
@@ -60,3 +61,4 @@ class AddPropertyActivity : BaseCurrencyActivity<AddPropertyView>() {
         return AddPropertyView.newInstance(actionType)
     }
 }
+

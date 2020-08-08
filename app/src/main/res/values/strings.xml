@@ -118,6 +118,7 @@
 
     //core string2
     <string name="can_t_be_empty">Can\'t be empty</string>
+    <string name="internet_agent">You need internet to add an agent</string>
     <string name="incorrect_date">Incorrect Date</string>
     <string name="incorrect_address">Incorrect address</string>
     <string name="agent_added">Agent added to the database</string>

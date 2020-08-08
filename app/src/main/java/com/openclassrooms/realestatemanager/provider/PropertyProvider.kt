@@ -10,11 +10,13 @@ import com.openclassrooms.realestatemanager.data.database.REALESTATEMANAGERDatab
 import com.openclassrooms.realestatemanager.utils.*
 import kotlinx.coroutines.runBlocking
 
+
 /**
  * Created by Mutwakil-Mo 🤩
  * Android Engineer,
  * Brussels
  */
+
 
 class PropertyProvider : ContentProvider() {
 
@@ -126,4 +128,5 @@ class PropertyProvider : ContentProvider() {
         CODE_AGENT_ITEM -> "vnd.android.cursor.item/$AUTHORITY.$AGENT_TABLE_NAME"
         else -> throw IllegalArgumentException("Unknown URI: $uri")
     }
+
 }

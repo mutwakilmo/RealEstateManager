@@ -18,7 +18,7 @@ import java.net.URL
 class BitmapDownloader(callback: Listeners)
     : AsyncTask<URL, Void, Bitmap>() {
 
-    interface Listeners{
+    interface Listeners {
         fun onBitmapDownloaded(bitmap: Bitmap)
     }
 
@@ -35,7 +35,7 @@ class BitmapDownloader(callback: Listeners)
             val bufferedInputStream = BufferedInputStream(inputStream)
             return BitmapFactory.decodeStream(bufferedInputStream)
 
-        } catch (e: IOException){
+        } catch (e: IOException) {
             e.printStackTrace()
         } finally {
             connection?.disconnect()

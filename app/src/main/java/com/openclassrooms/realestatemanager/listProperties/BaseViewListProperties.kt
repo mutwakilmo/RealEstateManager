@@ -4,11 +4,11 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.openclassrooms.realestatemanager.R
-import com.openclassrooms.realestatemanager.base.BaseFragmentREALSTATEMANAGER
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERView
 import com.openclassrooms.realestatemanager.data.entity.PropertyWithAllData
 import com.openclassrooms.realestatemanager.injection.Injection
 import com.openclassrooms.realestatemanager.mainActivity.MainActivity
+import com.openclassrooms.realestatemanager.base.BaseFragmentREALSTATEMANAGER
+import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERView
 import com.openclassrooms.realestatemanager.searchPropertyResult.SearchResultActivity
 import com.openclassrooms.realestatemanager.utils.ACTION_TYPE_LIST_PROPERTY
 import com.openclassrooms.realestatemanager.utils.Currency

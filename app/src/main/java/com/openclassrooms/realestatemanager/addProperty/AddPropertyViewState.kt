@@ -1,12 +1,13 @@
 package com.openclassrooms.realestatemanager.addProperty
 
 import android.content.Context
+import com.openclassrooms.realestatemanager.data.entity.Agent
+import com.openclassrooms.realestatemanager.data.entity.Picture
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERIntent
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERResult
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewState
-import com.openclassrooms.realestatemanager.data.entity.Agent
-import com.openclassrooms.realestatemanager.data.entity.Picture
 import com.openclassrooms.realestatemanager.utils.TypeFacility
+
 
 /**
  * Created by Mutwakil-Mo 🤩

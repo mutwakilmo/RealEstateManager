@@ -1,12 +1,12 @@
 package com.openclassrooms.realestatemanager.detailsProperty
 
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERIntent
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERResult
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewState
 import com.openclassrooms.realestatemanager.data.entity.Address
 import com.openclassrooms.realestatemanager.data.entity.Amenity
 import com.openclassrooms.realestatemanager.data.entity.Picture
 import com.openclassrooms.realestatemanager.data.entity.Property
+import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERIntent
+import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERResult
+import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewState
 
 /**
  * Created by Mutwakil-Mo 🤩

@@ -18,7 +18,6 @@ import com.google.android.material.textfield.TextInputLayout
 import com.openclassrooms.realestatemanager.R
 import com.openclassrooms.realestatemanager.data.entity.Picture
 import java.lang.ref.WeakReference
-
 /**
  * Created by Mutwakil-Mo 🤩
  * Android Engineer,

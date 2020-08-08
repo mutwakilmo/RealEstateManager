@@ -7,6 +7,7 @@ import com.bumptech.glide.RequestManager
 import com.openclassrooms.realestatemanager.R
 import com.openclassrooms.realestatemanager.data.entity.Picture
 
+
 /**
  * Created by Mutwakil-Mo 🤩
  * Android Engineer,

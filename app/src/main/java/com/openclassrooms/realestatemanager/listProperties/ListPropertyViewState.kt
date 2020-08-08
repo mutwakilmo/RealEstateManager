@@ -1,9 +1,9 @@
 package com.openclassrooms.realestatemanager.listProperties
 
+import com.openclassrooms.realestatemanager.data.entity.PropertyWithAllData
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERIntent
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERResult
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewState
-import com.openclassrooms.realestatemanager.data.entity.PropertyWithAllData
 
 /**
  * Created by Mutwakil-Mo 🤩
@@ -18,13 +18,14 @@ data class ListPropertyViewState(
         val itemSelected: Int? = null
 ) : REALESTATEMANAGERViewState
 
-sealed class PropertyListResult : REALESTATEMANAGERResult {
+sealed class PropertyListResult : REALESTATEMANAGERResult{
     data class DisplayPropertiesResult(val properties: List<PropertyWithAllData>?) : PropertyListResult()
     data class OpenPropertyDetailResult(val itemSelected: Int?) : PropertyListResult()
 }
 
-sealed class PropertyListIntent : REALESTATEMANAGERIntent {
+sealed class PropertyListIntent : REALESTATEMANAGERIntent{
     object DisplayPropertiesIntent : PropertyListIntent()
     data class OpenPropertyDetailIntent(val property: PropertyWithAllData, val itemPosition: Int?) : PropertyListIntent()
     data class SetActionTypeIntent(val actionType: ActionTypeList) : PropertyListIntent()
+
 }

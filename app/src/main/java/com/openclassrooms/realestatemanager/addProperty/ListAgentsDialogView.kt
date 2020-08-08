@@ -1,10 +1,12 @@
 package com.openclassrooms.realestatemanager.addProperty
 
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -12,10 +14,10 @@ import com.openclassrooms.realestatemanager.R
 import com.openclassrooms.realestatemanager.data.entity.Agent
 import com.openclassrooms.realestatemanager.utils.ItemClickSupport
 
+
 /**
- * Created by Mutwakil-Mo 🤩
- * Android Engineer,
- * Brussels
+ * A simple [Fragment] subclass.
+ *
  */
 class ListAgentsDialogView(private val agents: List<Agent>) : DialogFragment() {
 

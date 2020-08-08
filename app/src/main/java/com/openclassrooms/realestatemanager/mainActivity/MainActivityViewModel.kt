@@ -3,14 +3,15 @@ package com.openclassrooms.realestatemanager.mainActivity
 import android.content.Context
 import com.google.android.gms.tasks.Task
 import com.google.android.gms.tasks.Tasks
-import com.openclassrooms.realestatemanager.base.BaseViewModel
-import com.openclassrooms.realestatemanager.base.LoadingContentError
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewModel
 import com.openclassrooms.realestatemanager.data.entity.*
 import com.openclassrooms.realestatemanager.data.repository.AgentRepository
 import com.openclassrooms.realestatemanager.data.repository.CurrencyRepository
 import com.openclassrooms.realestatemanager.data.repository.PropertyRepository
 import com.openclassrooms.realestatemanager.data.repository.SaveDataRepository
+import com.openclassrooms.realestatemanager.mainActivity.ErrorSourceMainActivity.*
+import com.openclassrooms.realestatemanager.base.BaseViewModel
+import com.openclassrooms.realestatemanager.base.LoadingContentError
+import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewModel
 import com.openclassrooms.realestatemanager.utils.*
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
@@ -27,7 +28,7 @@ class MainActivityViewModel(
         private val currencyRepository: CurrencyRepository,
         private val propertyRepository: PropertyRepository,
         private val saveDataRepository: SaveDataRepository
-) : BaseViewModel<MainActivityViewState>(), REALESTATEMANAGERViewModel<MainActivityIntent, MainActivityResult> {
+) : BaseViewModel<MainActivityViewState>(), REALESTATEMANAGERViewModel<MainActivityIntent, MainActivityResult>{
 
     private var currentViewState = MainActivityViewState()
         set(value) {
@@ -103,7 +104,7 @@ class MainActivityViewModel(
                         currentViewState.copy(
                                 propertyAdded = null,
                                 isOpenAddProperty = false,
-                                errorSource = ErrorSourceMainActivity.NO_AGENT_IN_DB,
+                                errorSource = NO_AGENT_IN_DB,
                                 isLoading = false
                         )
                     }
@@ -165,7 +166,7 @@ class MainActivityViewModel(
                             document.toObject(Property::class.java)?.let { newProperty.add(it) }
                         }
                         getDataAndAgent(context)
-                    } else emitResultNetworkRequestFailure(ErrorSourceMainActivity.ERROR_FETCHING_NEW_FROM_NETWORK)
+                    } else emitResultNetworkRequestFailure(ERROR_FETCHING_NEW_FROM_NETWORK)
                 }
 
 
@@ -230,7 +231,7 @@ class MainActivityViewModel(
         Tasks.whenAll(networkOperations).addOnCompleteListener {
             if(it.isSuccessful){
                 getDataFromStorage(context)
-            } else emitResultNetworkRequestFailure(ErrorSourceMainActivity.ERROR_FETCHING_NEW_FROM_NETWORK)
+            } else emitResultNetworkRequestFailure(ERROR_FETCHING_NEW_FROM_NETWORK)
 
         }
     }
@@ -290,7 +291,7 @@ class MainActivityViewModel(
         }
 
         Tasks.whenAll(storageOperation).addOnCompleteListener {
-            if(!it.isSuccessful) emitResultNetworkRequestFailure(ErrorSourceMainActivity.ERROR_DOWNLOADING_IMAGES)
+            if(!it.isSuccessful) emitResultNetworkRequestFailure(ERROR_DOWNLOADING_IMAGES)
             createNewDataInDBLocally()
             saveDataRepository.lastUpdateFromNetwork = todaysDate
 
@@ -319,4 +320,3 @@ class MainActivityViewModel(
     }
 
 }
-

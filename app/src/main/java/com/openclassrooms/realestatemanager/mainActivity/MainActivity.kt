@@ -3,7 +3,6 @@ package com.openclassrooms.realestatemanager.mainActivity
 import android.app.Activity
 import android.content.Intent
 import android.graphics.PorterDuff
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -11,6 +10,7 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.ProgressBar
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
@@ -26,12 +26,14 @@ import com.openclassrooms.realestatemanager.R
 import com.openclassrooms.realestatemanager.addAgent.AddAgentActivity
 import com.openclassrooms.realestatemanager.addProperty.ActionType
 import com.openclassrooms.realestatemanager.addProperty.AddPropertyActivity
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERView
 import com.openclassrooms.realestatemanager.detailsProperty.DetailActivity
 import com.openclassrooms.realestatemanager.detailsProperty.DetailsPropertyView
 import com.openclassrooms.realestatemanager.injection.Injection
+import com.openclassrooms.realestatemanager.mainActivity.ErrorSourceMainActivity.*
+import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERView
 import com.openclassrooms.realestatemanager.searchProperty.SearchActivity
 import com.openclassrooms.realestatemanager.utils.*
+import com.openclassrooms.realestatemanager.utils.TypeConnection.*
 import com.wangjie.rapidfloatingactionbutton.RapidFloatingActionButton
 import com.wangjie.rapidfloatingactionbutton.RapidFloatingActionHelper
 import com.wangjie.rapidfloatingactionbutton.RapidFloatingActionLayout
@@ -40,6 +42,7 @@ import com.wangjie.rapidfloatingactionbutton.contentimpl.labellist.RapidFloating
 import com.wangjie.rapidfloatingactionbutton.util.RFABTextUtil
 import pub.devrel.easypermissions.EasyPermissions
 import java.lang.ref.WeakReference
+
 
 class MainActivity : AppCompatActivity(), REALESTATEMANAGERView<MainActivityViewState>,
         RapidFloatingActionContentLabelList.OnRapidFloatingActionContentLabelListListener<RFACLabelItem<Int>>,
@@ -199,7 +202,7 @@ class MainActivity : AppCompatActivity(), REALESTATEMANAGERView<MainActivityView
         }
 
         fun setupTabLayoutListener(){
-            tabLayout.addOnTabSelectedListener(object : TabLayout.ViewPagerOnTabSelectedListener(viewPager){
+            tabLayout.addOnTabSelectedListener(object :TabLayout.ViewPagerOnTabSelectedListener(viewPager){
                 override fun onTabReselected(tab: TabLayout.Tab?) {
 
                 }
@@ -209,7 +212,7 @@ class MainActivity : AppCompatActivity(), REALESTATEMANAGERView<MainActivityView
                     tab?.icon?.setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN)
                 }
 
-                override fun onTabSelected(tab: TabLayout.Tab?) {
+                override fun onTabSelected(tab: TabLayout.Tab) {
                     val tabIconColor = ContextCompat.getColor(applicationContext, R.color.colorTextPrimary)
                     tab?.icon?.setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN)
 
@@ -243,7 +246,7 @@ class MainActivity : AppCompatActivity(), REALESTATEMANAGERView<MainActivityView
         )
         items.add(RFACLabelItem<Int>()
 
-                .setLabel(getString(R.string.add_agent))
+                .setLabel(getString(R.string.agent_menu))
                 .setResId(R.drawable.person_icon)
                 .setIconNormalColor(ContextCompat.getColor(applicationContext, R.color.colorTextPrimary))
                 .setIconPressedColor(ContextCompat.getColor(applicationContext, R.color.colorWhite))
@@ -273,7 +276,7 @@ class MainActivity : AppCompatActivity(), REALESTATEMANAGERView<MainActivityView
                 if(isInternetAvailable(this)){
                     showAddAgentActivity()
                 } else {
-                    showSnackBarMessage(getString(R.string.internet_need))
+                    showSnackBarMessage(getString(R.string.internet_agent))
                 }
 
             }
@@ -358,9 +361,9 @@ class MainActivity : AppCompatActivity(), REALESTATEMANAGERView<MainActivityView
 
     private fun renderErrorOpeningActivity(errorSource: ErrorSourceMainActivity){
         when(errorSource){
-            ErrorSourceMainActivity.NO_AGENT_IN_DB -> showSnackBarMessage(getString(R.string.create_agent_first))
-            ErrorSourceMainActivity.ERROR_FETCHING_NEW_FROM_NETWORK -> showSnackBarMessage(getString(R.string.error_fetching))
-            ErrorSourceMainActivity.ERROR_DOWNLOADING_IMAGES -> showSnackBarMessage(getString(R.string.picture_not_available))
+            NO_AGENT_IN_DB -> showSnackBarMessage(getString(R.string.create_agent_first))
+            ERROR_FETCHING_NEW_FROM_NETWORK -> showSnackBarMessage(getString(R.string.error_fetching))
+            ERROR_DOWNLOADING_IMAGES -> showSnackBarMessage(getString(R.string.picture_not_available))
         }
 
     }
@@ -419,9 +422,9 @@ class MainActivity : AppCompatActivity(), REALESTATEMANAGERView<MainActivityView
     private fun checkNetworkConnection(){
         if(downloading) return
         when(typeNetworkConnection(this)){
-            TypeConnection.WIFI -> downloadNewPropertyFromNetwork()
-            TypeConnection.DATA -> showNoWifiDialog()
-            TypeConnection.NONE -> showSnackBarMessage(getString(R.string.connect_data_update))
+            WIFI -> downloadNewPropertyFromNetwork()
+            DATA -> showNoWifiDialog()
+            NONE -> showSnackBarMessage(getString(R.string.connect_data_update))
         }
     }
 

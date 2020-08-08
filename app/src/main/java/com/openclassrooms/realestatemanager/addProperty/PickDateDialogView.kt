@@ -1,6 +1,7 @@
 package com.openclassrooms.realestatemanager.addProperty
 
 
+
 import android.app.DatePickerDialog
 import android.app.Dialog
 import android.content.DialogInterface
@@ -13,6 +14,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.openclassrooms.realestatemanager.R
 import java.util.*
+
 
 /**
  * A simple [Fragment] subclass.
@@ -42,7 +44,7 @@ class PickDateDialogView(private val dateViewId: View, private var existingDate:
         val year = existingDate!!.get(Calendar.YEAR)
         val month = existingDate!!.get(Calendar.MONTH)
         val day = existingDate!!.get(Calendar.DAY_OF_MONTH)
-        datePickerDialog = context?.let { DatePickerDialog(it,this,year,month,day) }!!
+        datePickerDialog = DatePickerDialog(context, this, year, month, day)
         datePickerDialog.setButton(BUTTON_POSITIVE, getString(R.string.ok_button), this)
         datePickerDialog.setButton(BUTTON_NEGATIVE, getString(R.string.cancel_button), this)
 
