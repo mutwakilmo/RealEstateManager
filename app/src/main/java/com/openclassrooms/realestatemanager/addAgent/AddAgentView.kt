@@ -26,6 +26,8 @@ import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERView
 import com.openclassrooms.realestatemanager.utils.*
 import com.openclassrooms.realestatemanager.utils.extensions.saveToInternalStorage
 import com.openclassrooms.realestatemanager.viewmodel.AddAgentViewModel
+import com.openclassrooms.realestatemanager.viewstate.AddAgentIntent
+import com.openclassrooms.realestatemanager.viewstate.AddAgentViewState
 import pub.devrel.easypermissions.EasyPermissions
 
 /**

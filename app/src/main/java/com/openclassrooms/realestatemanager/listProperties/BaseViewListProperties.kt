@@ -14,6 +14,8 @@ import com.openclassrooms.realestatemanager.utils.ACTION_TYPE_LIST_PROPERTY
 import com.openclassrooms.realestatemanager.utils.Currency
 import com.openclassrooms.realestatemanager.utils.showSnackBar
 import com.openclassrooms.realestatemanager.viewmodel.ListPropertyViewModel
+import com.openclassrooms.realestatemanager.viewstate.ListPropertyViewState
+import com.openclassrooms.realestatemanager.viewstate.PropertyListIntent
 
 /**
  * Created by Mutwakil-Mo 🤩

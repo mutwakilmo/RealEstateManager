@@ -1,9 +1,10 @@
-package com.openclassrooms.realestatemanager.mainActivity
+package com.openclassrooms.realestatemanager.viewstate
 
 import android.content.Context
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERIntent
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERResult
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewState
+import com.openclassrooms.realestatemanager.mainActivity.ErrorSourceMainActivity
 import com.openclassrooms.realestatemanager.utils.Currency
 
 /**

@@ -13,9 +13,9 @@ import com.openclassrooms.realestatemanager.base.BaseViewModel
 import com.openclassrooms.realestatemanager.base.LoadingContentError
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewModel
 import com.openclassrooms.realestatemanager.mainActivity.ErrorSourceMainActivity
-import com.openclassrooms.realestatemanager.mainActivity.MainActivityIntent
-import com.openclassrooms.realestatemanager.mainActivity.MainActivityResult
-import com.openclassrooms.realestatemanager.mainActivity.MainActivityViewState
+import com.openclassrooms.realestatemanager.viewstate.MainActivityIntent
+import com.openclassrooms.realestatemanager.viewstate.MainActivityResult
+import com.openclassrooms.realestatemanager.viewstate.MainActivityViewState
 import com.openclassrooms.realestatemanager.utils.*
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch

@@ -1,5 +1,6 @@
-package com.openclassrooms.realestatemanager.addAgent
+package com.openclassrooms.realestatemanager.viewstate
 
+import com.openclassrooms.realestatemanager.addAgent.ErrorSourceAddAgent
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERIntent
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERResult
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewState

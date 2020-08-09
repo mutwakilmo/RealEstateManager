@@ -10,9 +10,9 @@ import com.openclassrooms.realestatemanager.base.BaseViewModel
 import com.openclassrooms.realestatemanager.base.LoadingContentError
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewModel
 import com.openclassrooms.realestatemanager.searchProperty.ErrorSourceSearch
-import com.openclassrooms.realestatemanager.searchProperty.SeachPropertyViewState
-import com.openclassrooms.realestatemanager.searchProperty.SearchPropertyIntent
-import com.openclassrooms.realestatemanager.searchProperty.SearchPropertyResult
+import com.openclassrooms.realestatemanager.viewstate.SeachPropertyViewState
+import com.openclassrooms.realestatemanager.viewstate.SearchPropertyIntent
+import com.openclassrooms.realestatemanager.viewstate.SearchPropertyResult
 import com.openclassrooms.realestatemanager.utils.*
 import com.openclassrooms.realestatemanager.utils.Currency
 import com.openclassrooms.realestatemanager.utils.extensions.keepPropertiesWithAllAmenityRequested

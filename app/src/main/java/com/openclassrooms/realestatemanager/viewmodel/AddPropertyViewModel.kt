@@ -21,6 +21,10 @@ import com.openclassrooms.realestatemanager.base.LoadingContentError
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewModel
 import com.openclassrooms.realestatemanager.utils.*
 import com.openclassrooms.realestatemanager.utils.extensions.*
+import com.openclassrooms.realestatemanager.viewstate.AddPropertyIntent
+import com.openclassrooms.realestatemanager.viewstate.AddPropertyResult
+import com.openclassrooms.realestatemanager.viewstate.AddPropertyViewEffect
+import com.openclassrooms.realestatemanager.viewstate.AddPropertyViewState
 import io.reactivex.disposables.Disposable
 import io.reactivex.observers.DisposableObserver
 import kotlinx.coroutines.Job

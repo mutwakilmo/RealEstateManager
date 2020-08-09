@@ -8,9 +8,9 @@ import com.openclassrooms.realestatemanager.data.repository.PropertyRepository
 import com.openclassrooms.realestatemanager.base.BaseViewModel
 import com.openclassrooms.realestatemanager.base.LoadingContentError
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewModel
-import com.openclassrooms.realestatemanager.detailsProperty.DetailsPropertyIntent
-import com.openclassrooms.realestatemanager.detailsProperty.DetailsPropertyResult
-import com.openclassrooms.realestatemanager.detailsProperty.DetailsPropertyViewState
+import com.openclassrooms.realestatemanager.viewstate.DetailsPropertyIntent
+import com.openclassrooms.realestatemanager.viewstate.DetailsPropertyResult
+import com.openclassrooms.realestatemanager.viewstate.DetailsPropertyViewState
 import com.openclassrooms.realestatemanager.utils.Currency
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch

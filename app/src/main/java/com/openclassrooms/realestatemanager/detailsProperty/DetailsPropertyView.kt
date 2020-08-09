@@ -30,6 +30,8 @@ import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERView
 import com.openclassrooms.realestatemanager.utils.*
 import com.openclassrooms.realestatemanager.utils.extensions.*
 import com.openclassrooms.realestatemanager.viewmodel.DetailsPropertyViewModel
+import com.openclassrooms.realestatemanager.viewstate.DetailsPropertyIntent
+import com.openclassrooms.realestatemanager.viewstate.DetailsPropertyViewState
 import com.smarteist.autoimageslider.IndicatorAnimations
 import com.smarteist.autoimageslider.SliderView
 

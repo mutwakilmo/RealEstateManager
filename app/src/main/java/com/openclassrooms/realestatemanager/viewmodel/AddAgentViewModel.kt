@@ -1,8 +1,8 @@
 package com.openclassrooms.realestatemanager.viewmodel
 
-import com.openclassrooms.realestatemanager.addAgent.AddAgentIntent
-import com.openclassrooms.realestatemanager.addAgent.AddAgentResult
-import com.openclassrooms.realestatemanager.addAgent.AddAgentViewState
+import com.openclassrooms.realestatemanager.viewstate.AddAgentIntent
+import com.openclassrooms.realestatemanager.viewstate.AddAgentResult
+import com.openclassrooms.realestatemanager.viewstate.AddAgentViewState
 import com.openclassrooms.realestatemanager.addAgent.ErrorSourceAddAgent
 import com.openclassrooms.realestatemanager.addAgent.ErrorSourceAddAgent.*
 import com.openclassrooms.realestatemanager.data.entity.Agent

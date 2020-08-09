@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager.detailsProperty
+package com.openclassrooms.realestatemanager.viewstate
 
 import com.openclassrooms.realestatemanager.data.entity.Address
 import com.openclassrooms.realestatemanager.data.entity.Amenity

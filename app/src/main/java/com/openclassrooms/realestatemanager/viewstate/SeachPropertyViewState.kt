@@ -1,9 +1,10 @@
-package com.openclassrooms.realestatemanager.searchProperty
+package com.openclassrooms.realestatemanager.viewstate
 
 import com.openclassrooms.realestatemanager.data.entity.Agent
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERIntent
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERResult
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewState
+import com.openclassrooms.realestatemanager.searchProperty.ErrorSourceSearch
 import com.openclassrooms.realestatemanager.utils.TypeFacility
 import com.openclassrooms.realestatemanager.utils.TypeProperty
 

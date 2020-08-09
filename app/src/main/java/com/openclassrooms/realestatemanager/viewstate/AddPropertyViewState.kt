@@ -1,6 +1,8 @@
-package com.openclassrooms.realestatemanager.addProperty
+package com.openclassrooms.realestatemanager.viewstate
 
 import android.content.Context
+import com.openclassrooms.realestatemanager.addProperty.ActionType
+import com.openclassrooms.realestatemanager.addProperty.ErrorSourceAddProperty
 import com.openclassrooms.realestatemanager.data.entity.Agent
 import com.openclassrooms.realestatemanager.data.entity.Picture
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERIntent
