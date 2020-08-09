@@ -7,7 +7,7 @@ import com.openclassrooms.realestatemanager.data.repository.PropertyRepository
 import com.openclassrooms.realestatemanager.base.BaseViewModel
 import com.openclassrooms.realestatemanager.base.LoadingContentError
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewModel
-import com.openclassrooms.realestatemanager.listProperties.*
+import com.openclassrooms.realestatemanager.view.listProperties.*
 import com.openclassrooms.realestatemanager.utils.Currency
 import com.openclassrooms.realestatemanager.viewstate.ListPropertyViewState
 import com.openclassrooms.realestatemanager.viewstate.PropertyListIntent

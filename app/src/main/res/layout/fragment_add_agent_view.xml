@@ -8,7 +8,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".addAgent.AddAgentView">
+        tools:context=".view.addAgent.AddAgentView">
 
         <ImageView
             android:id="@+id/add_agent_view_picture_agent"

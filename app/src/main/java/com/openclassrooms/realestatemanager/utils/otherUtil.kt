@@ -3,8 +3,8 @@ package com.openclassrooms.realestatemanager.utils
 import android.content.Intent
 import android.util.Log
 import androidx.fragment.app.FragmentActivity
-import com.openclassrooms.realestatemanager.addProperty.ActionType
-import com.openclassrooms.realestatemanager.addProperty.AddPropertyActivity
+import com.openclassrooms.realestatemanager.view.addProperty.ActionType
+import com.openclassrooms.realestatemanager.view.addProperty.AddPropertyActivity
 import java.util.*
 
 /**

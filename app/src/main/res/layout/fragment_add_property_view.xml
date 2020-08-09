@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".addProperty.AddPropertyView">
+        tools:context=".view.addProperty.AddPropertyView">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/add_property_view_general_group"

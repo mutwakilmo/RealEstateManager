@@ -12,7 +12,7 @@ import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.UploadTask
 import com.openclassrooms.realestatemanager.BuildConfig
-import com.openclassrooms.realestatemanager.addProperty.ActionType
+import com.openclassrooms.realestatemanager.view.addProperty.ActionType
 import com.openclassrooms.realestatemanager.data.api.GeoApiService
 import com.openclassrooms.realestatemanager.data.api.model.GeoApiResponse
 import com.openclassrooms.realestatemanager.data.database.dao.PropertyDao

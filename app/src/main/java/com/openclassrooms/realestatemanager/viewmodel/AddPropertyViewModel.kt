@@ -4,10 +4,10 @@ import android.content.Context
 import android.graphics.Bitmap
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.openclassrooms.realestatemanager.addProperty.*
-import com.openclassrooms.realestatemanager.addProperty.ActionType.MODIFY_PROPERTY
-import com.openclassrooms.realestatemanager.addProperty.ActionType.NEW_PROPERTY
-import com.openclassrooms.realestatemanager.addProperty.ErrorSourceAddProperty.*
+import com.openclassrooms.realestatemanager.view.addProperty.*
+import com.openclassrooms.realestatemanager.view.addProperty.ActionType.MODIFY_PROPERTY
+import com.openclassrooms.realestatemanager.view.addProperty.ActionType.NEW_PROPERTY
+import com.openclassrooms.realestatemanager.view.addProperty.ErrorSourceAddProperty.*
 import com.openclassrooms.realestatemanager.data.SubProperty
 import com.openclassrooms.realestatemanager.data.api.model.GeoApiResponse
 import com.openclassrooms.realestatemanager.data.database.Converters

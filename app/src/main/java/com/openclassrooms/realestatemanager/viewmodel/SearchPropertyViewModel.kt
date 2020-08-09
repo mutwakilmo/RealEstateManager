@@ -9,7 +9,7 @@ import com.openclassrooms.realestatemanager.data.repository.PropertyRepository
 import com.openclassrooms.realestatemanager.base.BaseViewModel
 import com.openclassrooms.realestatemanager.base.LoadingContentError
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewModel
-import com.openclassrooms.realestatemanager.searchProperty.ErrorSourceSearch
+import com.openclassrooms.realestatemanager.view.searchProperty.ErrorSourceSearch
 import com.openclassrooms.realestatemanager.viewstate.SeachPropertyViewState
 import com.openclassrooms.realestatemanager.viewstate.SearchPropertyIntent
 import com.openclassrooms.realestatemanager.viewstate.SearchPropertyResult

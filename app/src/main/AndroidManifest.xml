@@ -22,7 +22,7 @@
         android:theme="@style/RealEstateManagerTheme">
         <activity android:name=".view.ResetPasswordActivity"></activity>
         <activity android:name=".view.LoginActivity" />
-        <activity android:name=".mainActivity.MainActivity" />
+        <activity android:name="com.openclassrooms.realestatemanager.view.mainActivity.MainActivity" />
         <activity android:name=".view.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,23 +32,23 @@
         </activity>
         <activity android:name=".view.SecondActivity" />
         <activity
-            android:name=".searchPropertyResult.SearchResultActivity"
+            android:name="com.openclassrooms.realestatemanager.view.searchPropertyResult.SearchResultActivity"
             android:label="Results"
-            android:parentActivityName=".searchProperty.SearchActivity" />
+            android:parentActivityName="com.openclassrooms.realestatemanager.view.searchProperty.SearchActivity" />
         <activity
-            android:name=".searchProperty.SearchActivity"
+            android:name="com.openclassrooms.realestatemanager.view.searchProperty.SearchActivity"
             android:label="@string/search_activity_name"
             android:launchMode="singleTop"
-            android:parentActivityName=".mainActivity.MainActivity" />
+            android:parentActivityName="com.openclassrooms.realestatemanager.view.mainActivity.MainActivity" />
         <activity
-            android:name=".detailsProperty.DetailActivity"
+            android:name="com.openclassrooms.realestatemanager.view.detailsProperty.DetailActivity"
             android:label="@string/details_activity_name" />
         <activity
-            android:name=".addAgent.AddAgentActivity"
+            android:name="com.openclassrooms.realestatemanager.view.addAgent.AddAgentActivity"
             android:label="@string/add_agent"
-            android:parentActivityName=".mainActivity.MainActivity" />
+            android:parentActivityName="com.openclassrooms.realestatemanager.view.mainActivity.MainActivity" />
         <activity
-            android:name=".addProperty.AddPropertyActivity"
+            android:name="com.openclassrooms.realestatemanager.view.addProperty.AddPropertyActivity"
             android:label="@string/property_menu" />
 
         <provider

@@ -4,8 +4,8 @@ import com.openclassrooms.realestatemanager.data.entity.PropertyWithAllData
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERIntent
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERResult
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewState
-import com.openclassrooms.realestatemanager.listProperties.ActionTypeList
-import com.openclassrooms.realestatemanager.listProperties.ErrorSourceListProperty
+import com.openclassrooms.realestatemanager.view.listProperties.ActionTypeList
+import com.openclassrooms.realestatemanager.view.listProperties.ErrorSourceListProperty
 
 /**
  * Created by Mutwakil-Mo 🤩

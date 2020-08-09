@@ -10,7 +10,7 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.openclassrooms.realestatemanager.R
-import com.openclassrooms.realestatemanager.mainActivity.MainActivity
+import com.openclassrooms.realestatemanager.view.mainActivity.MainActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {

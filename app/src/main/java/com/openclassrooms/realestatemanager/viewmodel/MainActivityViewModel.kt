@@ -8,11 +8,11 @@ import com.openclassrooms.realestatemanager.data.repository.AgentRepository
 import com.openclassrooms.realestatemanager.data.repository.CurrencyRepository
 import com.openclassrooms.realestatemanager.data.repository.PropertyRepository
 import com.openclassrooms.realestatemanager.data.repository.SaveDataRepository
-import com.openclassrooms.realestatemanager.mainActivity.ErrorSourceMainActivity.*
+import com.openclassrooms.realestatemanager.view.mainActivity.ErrorSourceMainActivity.*
 import com.openclassrooms.realestatemanager.base.BaseViewModel
 import com.openclassrooms.realestatemanager.base.LoadingContentError
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewModel
-import com.openclassrooms.realestatemanager.mainActivity.ErrorSourceMainActivity
+import com.openclassrooms.realestatemanager.view.mainActivity.ErrorSourceMainActivity
 import com.openclassrooms.realestatemanager.viewstate.MainActivityIntent
 import com.openclassrooms.realestatemanager.viewstate.MainActivityResult
 import com.openclassrooms.realestatemanager.viewstate.MainActivityViewState

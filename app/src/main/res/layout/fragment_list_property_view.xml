@@ -4,7 +4,7 @@
     android:id="@+id/list_property_view_frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".listProperties.ListPropertyView">
+    tools:context=".view.listProperties.ListPropertyView">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/list_property_view_refresh"
