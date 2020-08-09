@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager.view
+package com.openclassrooms.realestatemanager.view.resetpassword
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
