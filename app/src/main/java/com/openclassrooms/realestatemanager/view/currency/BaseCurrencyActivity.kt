@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager.currency
+package com.openclassrooms.realestatemanager.view.currency
 
 import android.view.Menu
 import android.view.View
@@ -15,6 +15,8 @@ import com.openclassrooms.realestatemanager.injection.Injection
 import com.openclassrooms.realestatemanager.base.BaseFragmentREALSTATEMANAGER
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERView
 import com.openclassrooms.realestatemanager.utils.Currency
+import com.openclassrooms.realestatemanager.viewmodel.BaseCurrencyViewModel
+import com.openclassrooms.realestatemanager.viewstate.BaseCurrencyViewState
 import java.lang.ref.WeakReference
 
 /**

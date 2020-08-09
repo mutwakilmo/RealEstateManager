@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager.currency
+package com.openclassrooms.realestatemanager.viewstate
 
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERIntent
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERResult

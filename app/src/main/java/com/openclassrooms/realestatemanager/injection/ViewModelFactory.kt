@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.openclassrooms.realestatemanager.viewmodel.AddAgentViewModel
 import com.openclassrooms.realestatemanager.viewmodel.AddPropertyViewModel
-import com.openclassrooms.realestatemanager.currency.BaseCurrencyViewModel
+import com.openclassrooms.realestatemanager.viewmodel.BaseCurrencyViewModel
 import com.openclassrooms.realestatemanager.data.repository.AgentRepository
 import com.openclassrooms.realestatemanager.data.repository.CurrencyRepository
 import com.openclassrooms.realestatemanager.data.repository.PropertyRepository

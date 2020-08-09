@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import com.openclassrooms.realestatemanager.R
-import com.openclassrooms.realestatemanager.currency.BaseCurrencyActivity
-import com.openclassrooms.realestatemanager.currency.BaseCurrencyIntent
+import com.openclassrooms.realestatemanager.view.currency.BaseCurrencyActivity
+import com.openclassrooms.realestatemanager.viewstate.BaseCurrencyIntent
 import com.openclassrooms.realestatemanager.utils.ACTION_TYPE_ADD_PROPERTY
 
 
