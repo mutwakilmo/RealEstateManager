@@ -13,6 +13,7 @@ import com.openclassrooms.realestatemanager.searchPropertyResult.SearchResultAct
 import com.openclassrooms.realestatemanager.utils.ACTION_TYPE_LIST_PROPERTY
 import com.openclassrooms.realestatemanager.utils.Currency
 import com.openclassrooms.realestatemanager.utils.showSnackBar
+import com.openclassrooms.realestatemanager.viewmodel.ListPropertyViewModel
 
 /**
  * Created by Mutwakil-Mo 🤩

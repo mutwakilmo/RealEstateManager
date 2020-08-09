@@ -1,9 +1,10 @@
-package com.openclassrooms.realestatemanager.addProperty
+package com.openclassrooms.realestatemanager.viewmodel
 
 import android.content.Context
 import android.graphics.Bitmap
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.openclassrooms.realestatemanager.addProperty.*
 import com.openclassrooms.realestatemanager.addProperty.ActionType.MODIFY_PROPERTY
 import com.openclassrooms.realestatemanager.addProperty.ActionType.NEW_PROPERTY
 import com.openclassrooms.realestatemanager.addProperty.ErrorSourceAddProperty.*
@@ -224,17 +225,22 @@ class AddPropertyViewModel (
                     viewEffectLD.value = AddPropertyViewEffect.PropertyFromDBEffect(
                             result.packet.type, result.packet.price, result.packet.surface, result.packet.bedrooms,
                             result.packet.rooms, result.packet.bathrooms, result.packet.description, result.packet.address,
-                            result.packet.neighborhood, result.packet.onMarketSince, result.packet.isSold ?: false,
-                            result.packet.sellOn ?: "", result.packet.agent?.id, result.packet.amenities,
-                            result.packet.agent?.firstName ?: "",result.packet.agent?.lastName ?: ""
+                            result.packet.neighborhood, result.packet.onMarketSince, result.packet.isSold
+                            ?: false,
+                            result.packet.sellOn
+                                    ?: "", result.packet.agent?.id, result.packet.amenities,
+                            result.packet.agent?.firstName ?: "", result.packet.agent?.lastName
+                            ?: ""
                     )
                 }
                 is AddPropertyResult.PropertyFromDraftResult -> viewEffectLD.value = AddPropertyViewEffect.PropertyfromDraftEffect(
                         result.packet.type, result.packet.price, result.packet.surface, result.packet.bedrooms,
                         result.packet.rooms, result.packet.bathrooms, result.packet.description, result.packet.address,
-                        result.packet.neighborhood, result.packet.onMarketSince, result.packet.isSold ?: false,
-                        result.packet.sellOn ?: "", result.packet.agent?.id, result.packet.amenities,
-                        result.packet.agent?.firstName ?: "",result.packet.agent?.lastName ?: "",
+                        result.packet.neighborhood, result.packet.onMarketSince, result.packet.isSold
+                        ?: false,
+                        result.packet.sellOn
+                                ?: "", result.packet.agent?.id, result.packet.amenities,
+                        result.packet.agent?.firstName ?: "", result.packet.agent?.lastName ?: "",
                         result.packet.originalAvailable
                 )
             }
@@ -597,7 +603,7 @@ class AddPropertyViewModel (
             val isOriginalAvailable = actionType == MODIFY_PROPERTY
             val result: LoadingContentError<AddPropertyResult>  = LoadingContentError.Content(AddPropertyResult.PropertyFromDraftResult(
                     savedProperty!!.type, savedProperty.price, savedProperty.surface, savedProperty.rooms,
-                    savedProperty.bedrooms, savedProperty. bathrooms, savedProperty.description, savedProperty.address,
+                    savedProperty.bedrooms, savedProperty.bathrooms, savedProperty.description, savedProperty.address,
                     savedProperty.neighborhood, savedProperty.onMarketSince, savedProperty.isSold,
                     savedProperty.sellDate, savedProperty.amenities,
                     agent, isOriginalAvailable
@@ -643,10 +649,10 @@ class AddPropertyViewModel (
             val result: LoadingContentError<AddPropertyResult>
             result = LoadingContentError.Content(AddPropertyResult.PropertyFromDBResult(
                     property.type.typeName, property.price, property.surface, property.rooms,
-                    property.bedrooms, property. bathrooms, property.description, address.addressForDisplay,
+                    property.bedrooms, property.bathrooms, property.description, address.addressForDisplay,
                     address.neighbourhood, property.onMarketSince.toStringForDisplay(), property.sold,
                     property.sellDate?.toStringForDisplay(), previousAmenities.map { it.type },
-                    agent,  null
+                    agent, null
             ))
 
             resultToViewEffect(result)

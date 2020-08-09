@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager.mainActivity
+package com.openclassrooms.realestatemanager.viewmodel
 
 import android.content.Context
 import com.google.android.gms.tasks.Task
@@ -12,6 +12,10 @@ import com.openclassrooms.realestatemanager.mainActivity.ErrorSourceMainActivity
 import com.openclassrooms.realestatemanager.base.BaseViewModel
 import com.openclassrooms.realestatemanager.base.LoadingContentError
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewModel
+import com.openclassrooms.realestatemanager.mainActivity.ErrorSourceMainActivity
+import com.openclassrooms.realestatemanager.mainActivity.MainActivityIntent
+import com.openclassrooms.realestatemanager.mainActivity.MainActivityResult
+import com.openclassrooms.realestatemanager.mainActivity.MainActivityViewState
 import com.openclassrooms.realestatemanager.utils.*
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch

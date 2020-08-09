@@ -1,10 +1,11 @@
-package com.openclassrooms.realestatemanager
+package com.openclassrooms.realestatemanager.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.openclassrooms.realestatemanager.R
 import kotlinx.android.synthetic.main.activity_reset_password.*
 
 class ResetPasswordActivity : AppCompatActivity() {

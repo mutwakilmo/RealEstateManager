@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager
+package com.openclassrooms.realestatemanager.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.openclassrooms.realestatemanager.R
 import com.openclassrooms.realestatemanager.mainActivity.MainActivity
 import kotlinx.android.synthetic.main.activity_login.*
 

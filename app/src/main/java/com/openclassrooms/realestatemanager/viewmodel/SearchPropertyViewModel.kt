@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager.searchProperty
+package com.openclassrooms.realestatemanager.viewmodel
 
 import androidx.lifecycle.LiveData
 import com.openclassrooms.realestatemanager.data.entity.Agent
@@ -9,6 +9,10 @@ import com.openclassrooms.realestatemanager.data.repository.PropertyRepository
 import com.openclassrooms.realestatemanager.base.BaseViewModel
 import com.openclassrooms.realestatemanager.base.LoadingContentError
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewModel
+import com.openclassrooms.realestatemanager.searchProperty.ErrorSourceSearch
+import com.openclassrooms.realestatemanager.searchProperty.SeachPropertyViewState
+import com.openclassrooms.realestatemanager.searchProperty.SearchPropertyIntent
+import com.openclassrooms.realestatemanager.searchProperty.SearchPropertyResult
 import com.openclassrooms.realestatemanager.utils.*
 import com.openclassrooms.realestatemanager.utils.Currency
 import com.openclassrooms.realestatemanager.utils.extensions.keepPropertiesWithAllAmenityRequested

@@ -34,6 +34,7 @@ import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERView
 import com.openclassrooms.realestatemanager.searchProperty.SearchActivity
 import com.openclassrooms.realestatemanager.utils.*
 import com.openclassrooms.realestatemanager.utils.TypeConnection.*
+import com.openclassrooms.realestatemanager.viewmodel.MainActivityViewModel
 import com.wangjie.rapidfloatingactionbutton.RapidFloatingActionButton
 import com.wangjie.rapidfloatingactionbutton.RapidFloatingActionHelper
 import com.wangjie.rapidfloatingactionbutton.RapidFloatingActionLayout

@@ -25,6 +25,7 @@ import com.openclassrooms.realestatemanager.injection.Injection
 import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERView
 import com.openclassrooms.realestatemanager.utils.*
 import com.openclassrooms.realestatemanager.utils.extensions.saveToInternalStorage
+import com.openclassrooms.realestatemanager.viewmodel.AddAgentViewModel
 import pub.devrel.easypermissions.EasyPermissions
 
 /**

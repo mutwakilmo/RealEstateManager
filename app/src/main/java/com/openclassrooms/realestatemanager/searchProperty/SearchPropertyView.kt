@@ -32,6 +32,7 @@ import com.openclassrooms.realestatemanager.utils.Currency
 import com.openclassrooms.realestatemanager.utils.Currency.DOLLAR
 import com.openclassrooms.realestatemanager.utils.Currency.EURO
 import com.openclassrooms.realestatemanager.utils.extensions.*
+import com.openclassrooms.realestatemanager.viewmodel.SearchPropertyViewModel
 import java.util.*
 
 /**

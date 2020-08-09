@@ -41,6 +41,7 @@ import com.openclassrooms.realestatemanager.utils.Currency.DOLLAR
 import com.openclassrooms.realestatemanager.utils.Currency.EURO
 import com.openclassrooms.realestatemanager.utils.TypeFacility.*
 import com.openclassrooms.realestatemanager.utils.extensions.*
+import com.openclassrooms.realestatemanager.viewmodel.AddPropertyViewModel
 import kotlinx.android.synthetic.main.dialog_photo_source.view.*
 import java.io.File
 import java.io.IOException
