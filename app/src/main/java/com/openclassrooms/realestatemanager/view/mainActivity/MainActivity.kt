@@ -30,7 +30,7 @@ import com.openclassrooms.realestatemanager.view.detailsProperty.DetailActivity
 import com.openclassrooms.realestatemanager.view.detailsProperty.DetailsPropertyView
 import com.openclassrooms.realestatemanager.injection.Injection
 import com.openclassrooms.realestatemanager.view.mainActivity.ErrorSourceMainActivity.*
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERView
+import com.openclassrooms.realestatemanager.base.realStateManagerView
 import com.openclassrooms.realestatemanager.view.searchProperty.SearchActivity
 import com.openclassrooms.realestatemanager.utils.*
 import com.openclassrooms.realestatemanager.utils.TypeConnection.*
@@ -47,7 +47,7 @@ import pub.devrel.easypermissions.EasyPermissions
 import java.lang.ref.WeakReference
 
 
-class MainActivity : AppCompatActivity(), REALESTATEMANAGERView<MainActivityViewState>,
+class MainActivity : AppCompatActivity(), realStateManagerView<MainActivityViewState>,
         RapidFloatingActionContentLabelList.OnRapidFloatingActionContentLabelListListener<RFACLabelItem<Int>>,
         EasyPermissions.PermissionCallbacks
 {

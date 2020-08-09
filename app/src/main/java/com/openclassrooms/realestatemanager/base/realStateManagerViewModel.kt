@@ -5,7 +5,7 @@ package com.openclassrooms.realestatemanager.base
  * Android Engineer,
  * Brussels
  */
-interface REALESTATEMANAGERViewModel<I : REALESTATEMANAGERIntent, R : REALESTATEMANAGERResult> {
+interface realStateManagerViewModel<I : realStateManagerIntent, R : realStateManageresult> {
     fun actionFromIntent(intent: I)
     fun resultToViewState(result: LoadingContentError<R>)
 }

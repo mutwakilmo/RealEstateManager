@@ -4,9 +4,9 @@ import com.openclassrooms.realestatemanager.data.entity.Address
 import com.openclassrooms.realestatemanager.data.entity.Amenity
 import com.openclassrooms.realestatemanager.data.entity.Picture
 import com.openclassrooms.realestatemanager.data.entity.Property
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERIntent
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERResult
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewState
+import com.openclassrooms.realestatemanager.base.realStateManagerIntent
+import com.openclassrooms.realestatemanager.base.realStateManageresult
+import com.openclassrooms.realestatemanager.base.realStateManagerViewState
 
 /**
  * Created by Mutwakil-Mo 🤩
@@ -20,14 +20,14 @@ data class DetailsPropertyViewState(
         val address: Address? = null,
         val pictures: List<Picture>? = null,
         val amenities: List<Amenity>? = null
-) : REALESTATEMANAGERViewState
+) : realStateManagerViewState
 
-sealed class DetailsPropertyIntent : REALESTATEMANAGERIntent {
+sealed class DetailsPropertyIntent : realStateManagerIntent {
     object FetchDetailsIntent : DetailsPropertyIntent()
     object DisplayDetailsIntent : DetailsPropertyIntent()
 }
 
-sealed class DetailsPropertyResult : REALESTATEMANAGERResult {
+sealed class DetailsPropertyResult : realStateManageresult {
     data class FetchDetailsResult(
             val property: Property?, val address: Address?,
             val amenities: List<Amenity>?, val pictures: List<Picture>?

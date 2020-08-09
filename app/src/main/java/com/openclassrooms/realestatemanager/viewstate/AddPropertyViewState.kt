@@ -5,9 +5,9 @@ import com.openclassrooms.realestatemanager.view.addProperty.ActionType
 import com.openclassrooms.realestatemanager.view.addProperty.ErrorSourceAddProperty
 import com.openclassrooms.realestatemanager.data.entity.Agent
 import com.openclassrooms.realestatemanager.data.entity.Picture
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERIntent
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERResult
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewState
+import com.openclassrooms.realestatemanager.base.realStateManagerIntent
+import com.openclassrooms.realestatemanager.base.realStateManageresult
+import com.openclassrooms.realestatemanager.base.realStateManagerViewState
 import com.openclassrooms.realestatemanager.utils.TypeFacility
 
 
@@ -36,7 +36,7 @@ data class AddPropertyViewState(
         val amenities: List<TypeFacility>? = null, val pictures: List<Picture>? = null,
         val agentFirstName: String = "", val agentLastName: String = ""
 
-) : REALESTATEMANAGERViewState
+) : realStateManagerViewState
 
 sealed class AddPropertyViewEffect {
     data class PropertyFromDBEffect(
@@ -61,7 +61,7 @@ sealed class AddPropertyViewEffect {
     ) : AddPropertyViewEffect()
 }
 
-sealed class AddPropertyIntent : REALESTATEMANAGERIntent {
+sealed class AddPropertyIntent : realStateManagerIntent {
     data class AddPropertyToDBIntent(
             val type: String, val price: Double?,
             val surface: Double?, val rooms: Int?,
@@ -100,7 +100,7 @@ sealed class AddPropertyIntent : REALESTATEMANAGERIntent {
 
 }
 
-sealed class AddPropertyResult : REALESTATEMANAGERResult {
+sealed class AddPropertyResult : realStateManageresult {
     data class PropertyAddedToDBResult(val errorSource: List<ErrorSourceAddProperty>?) : AddPropertyResult()
     object PropertyAddedToDraftResult : AddPropertyResult()
     data class PropertyFromDBResult(

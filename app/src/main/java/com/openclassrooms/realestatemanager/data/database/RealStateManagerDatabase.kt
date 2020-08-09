@@ -18,7 +18,7 @@ import com.openclassrooms.realestatemanager.data.entity.*
         exportSchema = false
 )
 @TypeConverters(Converters::class)
-abstract class REALESTATEMANAGERDatabase : RoomDatabase(){
+abstract class RealStateManagerDatabase : RoomDatabase(){
 
     // --- DAO
     abstract fun addressDao(): AddressDao
@@ -29,13 +29,13 @@ abstract class REALESTATEMANAGERDatabase : RoomDatabase(){
 
     companion object{
         @Volatile
-        private var INSTANCE: REALESTATEMANAGERDatabase? = null
-        fun getDatabase(context: Context): REALESTATEMANAGERDatabase {
+        private var INSTANCE: RealStateManagerDatabase? = null
+        fun getDatabase(context: Context): RealStateManagerDatabase {
             return INSTANCE
                     ?: synchronized(this){
                         val instance = Room.databaseBuilder(
                                 context.applicationContext,
-                                REALESTATEMANAGERDatabase::class.java,
+                                RealStateManagerDatabase::class.java,
                                 "REM_db.db")
                                 .build()
                         INSTANCE = instance

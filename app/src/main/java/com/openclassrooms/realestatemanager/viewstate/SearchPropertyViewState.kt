@@ -1,9 +1,9 @@
 package com.openclassrooms.realestatemanager.viewstate
 
 import com.openclassrooms.realestatemanager.data.entity.Agent
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERIntent
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERResult
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewState
+import com.openclassrooms.realestatemanager.base.realStateManagerIntent
+import com.openclassrooms.realestatemanager.base.realStateManageresult
+import com.openclassrooms.realestatemanager.base.realStateManagerViewState
 import com.openclassrooms.realestatemanager.view.searchProperty.ErrorSourceSearch
 import com.openclassrooms.realestatemanager.utils.TypeFacility
 import com.openclassrooms.realestatemanager.utils.TypeProperty
@@ -19,9 +19,9 @@ data class SeachPropertyViewState(
         val showProperty: Boolean = false,
         val agents: List<Agent>? = null,
         val loading: Boolean = false
-) : REALESTATEMANAGERViewState
+) : realStateManagerViewState
 
-sealed class SearchPropertyIntent : REALESTATEMANAGERIntent {
+sealed class SearchPropertyIntent : realStateManagerIntent {
     data class SearchPropertyFromInputIntent(
             val type: List<TypeProperty>, val minPrice: Double?, val maxPrice: Double?,
             val minSurface: Double?, val maxSurface: Double?, val minNbRooms: Int?,
@@ -33,7 +33,7 @@ sealed class SearchPropertyIntent : REALESTATEMANAGERIntent {
     object GetListAgentsIntent : SearchPropertyIntent()
 }
 
-sealed class SearchPropertyResult : REALESTATEMANAGERResult {
+sealed class SearchPropertyResult : realStateManageresult {
     data class SearchResult(val error: List<ErrorSourceSearch>?) : SearchPropertyResult()
     data class ListAgentsResult(val listAgents: List<Agent>?, val errorSource: List<ErrorSourceSearch>?) : SearchPropertyResult()
 }

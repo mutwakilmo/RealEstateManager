@@ -6,7 +6,7 @@ import android.content.UriMatcher
 import android.database.Cursor
 import android.net.Uri
 import androidx.core.net.toUri
-import com.openclassrooms.realestatemanager.data.database.REALESTATEMANAGERDatabase
+import com.openclassrooms.realestatemanager.data.database.RealStateManagerDatabase
 import com.openclassrooms.realestatemanager.utils.*
 import kotlinx.coroutines.runBlocking
 
@@ -42,7 +42,7 @@ class PropertyProvider : ContentProvider() {
 
     override fun insert(uri: Uri, contentValues: ContentValues?): Uri? {
         if(context != null && contentValues != null) {
-            val database = REALESTATEMANAGERDatabase.getDatabase(context!!)
+            val database = RealStateManagerDatabase.getDatabase(context!!)
             when (uriMatcher.match(uri)) {
                 CODE_PROPERTY_ITEM -> {
                     val property = propertyFromContentValues(contentValues)
@@ -78,7 +78,7 @@ class PropertyProvider : ContentProvider() {
     override fun query(uri: Uri, projection: Array<String>?, selection: String?, selectionArgs: Array<String>?, sortOrder: String?): Cursor? {
         val id = uri.lastPathSegment
         if(id != null && context != null){
-            val database = REALESTATEMANAGERDatabase.getDatabase(context!!)
+            val database = RealStateManagerDatabase.getDatabase(context!!)
             return when(uriMatcher.match(uri)){
                 CODE_PICTURE_ITEM -> database.pictureDao().getPictureWithCursor(id)
                 CODE_AMENITY_ITEM -> database.amenityDao().getAmenityWithCursor(id)

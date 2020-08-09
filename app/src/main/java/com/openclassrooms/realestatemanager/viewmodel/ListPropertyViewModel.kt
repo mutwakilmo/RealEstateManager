@@ -6,7 +6,7 @@ import com.openclassrooms.realestatemanager.data.repository.CurrencyRepository
 import com.openclassrooms.realestatemanager.data.repository.PropertyRepository
 import com.openclassrooms.realestatemanager.base.BaseViewModel
 import com.openclassrooms.realestatemanager.base.LoadingContentError
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewModel
+import com.openclassrooms.realestatemanager.base.realStateManagerViewModel
 import com.openclassrooms.realestatemanager.view.listProperties.*
 import com.openclassrooms.realestatemanager.utils.Currency
 import com.openclassrooms.realestatemanager.viewstate.ListPropertyViewState
@@ -24,7 +24,7 @@ class ListPropertyViewModel(
         private val propertyRepository: PropertyRepository,
         private val currencyRepository: CurrencyRepository
 )
-    : BaseViewModel<ListPropertyViewState>(), REALESTATEMANAGERViewModel<PropertyListIntent, PropertyListResult> {
+    : BaseViewModel<ListPropertyViewState>(), realStateManagerViewModel<PropertyListIntent, PropertyListResult> {
 
     private var currentViewState = ListPropertyViewState()
         set(value) {

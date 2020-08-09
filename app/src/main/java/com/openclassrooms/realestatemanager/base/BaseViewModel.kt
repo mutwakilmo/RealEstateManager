@@ -13,7 +13,7 @@ import kotlin.coroutines.CoroutineContext
  * Android Engineer,
  * Brussels
  */
-abstract class BaseViewModel<S : REALESTATEMANAGERViewState> : ViewModel(), CoroutineScope {
+abstract class BaseViewModel<S : realStateManagerViewState> : ViewModel(), CoroutineScope {
 
     private val compositeJob = Job()
     override val coroutineContext: CoroutineContext

@@ -2,7 +2,7 @@ package com.openclassrooms.realestatemanager.data.database.dao
 
 import android.database.Cursor
 import androidx.room.*
-import com.openclassrooms.realestatemanager.data.database.REALESTATEMANAGERDatabase
+import com.openclassrooms.realestatemanager.data.database.RealStateManagerDatabase
 import com.openclassrooms.realestatemanager.data.entity.*
 import com.openclassrooms.realestatemanager.utils.*
 import java.util.*
@@ -14,7 +14,7 @@ import java.util.*
  */
 
 @Dao
-abstract class PropertyDao(private val database: REALESTATEMANAGERDatabase) {
+abstract class PropertyDao(private val database: RealStateManagerDatabase) {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     abstract suspend fun createProperty(property: Property)

@@ -9,7 +9,7 @@ import com.openclassrooms.realestatemanager.data.entity.Agent
 import com.openclassrooms.realestatemanager.data.repository.AgentRepository
 import com.openclassrooms.realestatemanager.base.BaseViewModel
 import com.openclassrooms.realestatemanager.base.LoadingContentError
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewModel
+import com.openclassrooms.realestatemanager.base.realStateManagerViewModel
 import com.openclassrooms.realestatemanager.utils.extensions.isCorrectEmail
 import com.openclassrooms.realestatemanager.utils.extensions.isCorrectName
 import com.openclassrooms.realestatemanager.utils.extensions.isCorrectPhoneNumber
@@ -25,7 +25,7 @@ import kotlinx.coroutines.launch
  */
 class AddAgentViewModel (
         private val agentRepository: AgentRepository
-) : BaseViewModel<AddAgentViewState>(), REALESTATEMANAGERViewModel<AddAgentIntent, AddAgentResult> {
+) : BaseViewModel<AddAgentViewState>(), realStateManagerViewModel<AddAgentIntent, AddAgentResult> {
 
     private var currentViewState = AddAgentViewState()
         set(value) {

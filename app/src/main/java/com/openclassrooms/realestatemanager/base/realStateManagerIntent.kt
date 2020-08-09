@@ -5,5 +5,5 @@ package com.openclassrooms.realestatemanager.base
  * Android Engineer,
  * Brussels
  */
-interface REALESTATEMANAGERResult {
+interface realStateManagerIntent {
 }

@@ -8,7 +8,7 @@ import com.openclassrooms.realestatemanager.data.entity.PropertyWithAllData
 import com.openclassrooms.realestatemanager.injection.Injection
 import com.openclassrooms.realestatemanager.view.mainActivity.MainActivity
 import com.openclassrooms.realestatemanager.base.BaseFragmentREALSTATEMANAGER
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERView
+import com.openclassrooms.realestatemanager.base.realStateManagerView
 import com.openclassrooms.realestatemanager.view.searchPropertyResult.SearchResultActivity
 import com.openclassrooms.realestatemanager.utils.ACTION_TYPE_LIST_PROPERTY
 import com.openclassrooms.realestatemanager.utils.Currency
@@ -22,7 +22,7 @@ import com.openclassrooms.realestatemanager.viewstate.PropertyListIntent
  * Android Engineer,
  * Brussels
  */
-abstract class BaseViewListProperties : BaseFragmentREALSTATEMANAGER(), REALESTATEMANAGERView<ListPropertyViewState> {
+abstract class BaseViewListProperties : BaseFragmentREALSTATEMANAGER(), realStateManagerView<ListPropertyViewState> {
 
     protected lateinit var viewModel: ListPropertyViewModel
     protected var currentCurrency: Currency? = null

@@ -13,7 +13,7 @@ import butterknife.ButterKnife
 import com.openclassrooms.realestatemanager.R
 import com.openclassrooms.realestatemanager.injection.Injection
 import com.openclassrooms.realestatemanager.base.BaseFragmentREALSTATEMANAGER
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERView
+import com.openclassrooms.realestatemanager.base.realStateManagerView
 import com.openclassrooms.realestatemanager.utils.Currency
 import com.openclassrooms.realestatemanager.viewmodel.BaseCurrencyViewModel
 import com.openclassrooms.realestatemanager.viewstate.BaseCurrencyViewState
@@ -24,7 +24,7 @@ import java.lang.ref.WeakReference
  * Android Engineer,
  * Brussels
  */
-abstract class BaseCurrencyActivity<F : BaseFragmentREALSTATEMANAGER> : AppCompatActivity(), REALESTATEMANAGERView<BaseCurrencyViewState>,
+abstract class BaseCurrencyActivity<F : BaseFragmentREALSTATEMANAGER> : AppCompatActivity(), realStateManagerView<BaseCurrencyViewState>,
         BaseFragmentREALSTATEMANAGER.OnLoading {
 
 

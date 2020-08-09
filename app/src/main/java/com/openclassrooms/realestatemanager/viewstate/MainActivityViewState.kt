@@ -1,9 +1,9 @@
 package com.openclassrooms.realestatemanager.viewstate
 
 import android.content.Context
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERIntent
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERResult
-import com.openclassrooms.realestatemanager.base.REALESTATEMANAGERViewState
+import com.openclassrooms.realestatemanager.base.realStateManagerIntent
+import com.openclassrooms.realestatemanager.base.realStateManageresult
+import com.openclassrooms.realestatemanager.base.realStateManagerViewState
 import com.openclassrooms.realestatemanager.view.mainActivity.ErrorSourceMainActivity
 import com.openclassrooms.realestatemanager.utils.Currency
 
@@ -19,15 +19,15 @@ data class MainActivityViewState(
         val isLoading: Boolean = false,
         val currency: Currency = Currency.EURO,
         val propertyAdded: Int? = null
-) : REALESTATEMANAGERViewState
+) : realStateManagerViewState
 
-sealed class MainActivityResult : REALESTATEMANAGERResult {
+sealed class MainActivityResult : realStateManageresult {
     object OpenAddPropertyResult: MainActivityResult()
     data class ChangeCurrencyResult(val currency: Currency) : MainActivityResult()
     data class UpdateDataFromNetwork(val errorSource: ErrorSourceMainActivity?, val numberPropertyAdded: Int?) : MainActivityResult()
 }
 
-sealed class MainActivityIntent : REALESTATEMANAGERIntent {
+sealed class MainActivityIntent : realStateManagerIntent {
     object OpenAddPropertyActivityIntent : MainActivityIntent()
     object ChangeCurrencyIntent : MainActivityIntent()
     object GetCurrentCurrencyIntent : MainActivityIntent()
