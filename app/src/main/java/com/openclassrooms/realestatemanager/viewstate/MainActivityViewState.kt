@@ -1,7 +1,7 @@
 package com.openclassrooms.realestatemanager.viewstate
 
 import android.content.Context
-import com.openclassrooms.realestatemanager.base.realStateManagerIntent
+import com.openclassrooms.realestatemanager.base.RealStateManagerIntent
 import com.openclassrooms.realestatemanager.base.RealStateManagerResult
 import com.openclassrooms.realestatemanager.base.RealStateManagerViewState
 import com.openclassrooms.realestatemanager.view.mainActivity.ErrorSourceMainActivity
@@ -27,7 +27,7 @@ sealed class MainActivityResult : RealStateManagerResult {
     data class UpdateDataFromNetwork(val errorSource: ErrorSourceMainActivity?, val numberPropertyAdded: Int?) : MainActivityResult()
 }
 
-sealed class MainActivityIntent : realStateManagerIntent {
+sealed class MainActivityIntent : RealStateManagerIntent {
     object OpenAddPropertyActivityIntent : MainActivityIntent()
     object ChangeCurrencyIntent : MainActivityIntent()
     object GetCurrentCurrencyIntent : MainActivityIntent()

@@ -1,7 +1,7 @@
 package com.openclassrooms.realestatemanager.viewstate
 
 import com.openclassrooms.realestatemanager.data.entity.Agent
-import com.openclassrooms.realestatemanager.base.realStateManagerIntent
+import com.openclassrooms.realestatemanager.base.RealStateManagerIntent
 import com.openclassrooms.realestatemanager.base.RealStateManagerResult
 import com.openclassrooms.realestatemanager.base.RealStateManagerViewState
 import com.openclassrooms.realestatemanager.view.searchProperty.ErrorSourceSearch
@@ -21,7 +21,7 @@ data class SeachPropertyViewState(
         val loading: Boolean = false
 ) : RealStateManagerViewState
 
-sealed class SearchPropertyIntent : realStateManagerIntent {
+sealed class SearchPropertyIntent : RealStateManagerIntent {
     data class SearchPropertyFromInputIntent(
             val type: List<TypeProperty>, val minPrice: Double?, val maxPrice: Double?,
             val minSurface: Double?, val maxSurface: Double?, val minNbRooms: Int?,

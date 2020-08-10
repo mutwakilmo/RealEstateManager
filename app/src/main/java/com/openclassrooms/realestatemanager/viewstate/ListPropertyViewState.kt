@@ -1,7 +1,7 @@
 package com.openclassrooms.realestatemanager.viewstate
 
 import com.openclassrooms.realestatemanager.data.entity.PropertyWithAllData
-import com.openclassrooms.realestatemanager.base.realStateManagerIntent
+import com.openclassrooms.realestatemanager.base.RealStateManagerIntent
 import com.openclassrooms.realestatemanager.base.RealStateManagerResult
 import com.openclassrooms.realestatemanager.base.RealStateManagerViewState
 import com.openclassrooms.realestatemanager.view.listProperties.ActionTypeList
@@ -25,7 +25,7 @@ sealed class PropertyListResult : RealStateManagerResult{
     data class OpenPropertyDetailResult(val itemSelected: Int?) : PropertyListResult()
 }
 
-sealed class PropertyListIntent : realStateManagerIntent{
+sealed class PropertyListIntent : RealStateManagerIntent{
     object DisplayPropertiesIntent : PropertyListIntent()
     data class OpenPropertyDetailIntent(val property: PropertyWithAllData, val itemPosition: Int?) : PropertyListIntent()
     data class SetActionTypeIntent(val actionType: ActionTypeList) : PropertyListIntent()

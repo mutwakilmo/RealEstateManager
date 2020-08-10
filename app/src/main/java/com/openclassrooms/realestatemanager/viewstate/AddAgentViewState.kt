@@ -1,7 +1,7 @@
 package com.openclassrooms.realestatemanager.viewstate
 
 import com.openclassrooms.realestatemanager.view.addAgent.ErrorSourceAddAgent
-import com.openclassrooms.realestatemanager.base.realStateManagerIntent
+import com.openclassrooms.realestatemanager.base.RealStateManagerIntent
 import com.openclassrooms.realestatemanager.base.RealStateManagerResult
 import com.openclassrooms.realestatemanager.base.RealStateManagerViewState
 
@@ -16,7 +16,7 @@ data class AddAgentViewState(
         val errors: List<ErrorSourceAddAgent>? = null
 ) : RealStateManagerViewState
 
-sealed class AddAgentIntent : realStateManagerIntent {
+sealed class AddAgentIntent : RealStateManagerIntent {
     data class AddAgentToDBIntent(val pictureUrl: String?,
                                   val urlFromDevice: String?,
                                   val firstName: String,

@@ -5,7 +5,7 @@ import com.openclassrooms.realestatemanager.view.addProperty.ActionType
 import com.openclassrooms.realestatemanager.view.addProperty.ErrorSourceAddProperty
 import com.openclassrooms.realestatemanager.data.entity.Agent
 import com.openclassrooms.realestatemanager.data.entity.Picture
-import com.openclassrooms.realestatemanager.base.realStateManagerIntent
+import com.openclassrooms.realestatemanager.base.RealStateManagerIntent
 import com.openclassrooms.realestatemanager.base.RealStateManagerResult
 import com.openclassrooms.realestatemanager.base.RealStateManagerViewState
 import com.openclassrooms.realestatemanager.utils.TypeFacility
@@ -61,7 +61,7 @@ sealed class AddPropertyViewEffect {
     ) : AddPropertyViewEffect()
 }
 
-sealed class AddPropertyIntent : realStateManagerIntent {
+sealed class AddPropertyIntent : RealStateManagerIntent {
     data class AddPropertyToDBIntent(
             val type: String, val price: Double?,
             val surface: Double?, val rooms: Int?,

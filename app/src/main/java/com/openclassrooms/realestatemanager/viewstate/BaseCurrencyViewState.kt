@@ -1,6 +1,6 @@
 package com.openclassrooms.realestatemanager.viewstate
 
-import com.openclassrooms.realestatemanager.base.realStateManagerIntent
+import com.openclassrooms.realestatemanager.base.RealStateManagerIntent
 import com.openclassrooms.realestatemanager.base.RealStateManagerResult
 import com.openclassrooms.realestatemanager.base.RealStateManagerViewState
 import com.openclassrooms.realestatemanager.utils.Currency
@@ -18,7 +18,7 @@ sealed class BaseCurrencyResult : RealStateManagerResult {
     data class ChangeCurrencyResult(val currency: Currency) : BaseCurrencyResult()
 }
 
-sealed class BaseCurrencyIntent : realStateManagerIntent {
+sealed class BaseCurrencyIntent : RealStateManagerIntent {
     object ChangeCurrencyIntent : BaseCurrencyIntent()
     object GetCurrentCurrencyIntent : BaseCurrencyIntent()
 }
