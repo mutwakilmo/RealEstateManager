@@ -5,13 +5,13 @@ OpenClassrooms Project 9 : Android mobile application allowing agents to access 
 
 
 
-<img src="./art/screensplash.png" width="25%"> &ensp;<img src="./art/screenMain.png" width="25%">
-&ensp;<img src="./art/screenNotifications.png" width="25%">
+<img src="./art/5.jpg" width="25%"> &ensp;<img src="./art/7.jpg" width="25%">
+&ensp;<img src="./art/8.jpg" width="25%">
 
-<img src="./art/screenNotification2.png" width="25%"> &ensp;<img src="./art/screenSearch.png" width="25%"> &ensp;<img src="./art/screenLoadingSearch.png" width="25%">
-&ensp;<img src="./art/screenSearchResult.png" width="25%">&ensp;<img src="./art/screenHelp.png" width="25%">
+<img src="./art/2.jpg" width="25%"> &ensp;<img src="./art/4.jpg" width="25%"> &ensp;<img src="./art/6.jpg" width="25%">
+&ensp;<img src="./art/0.jpg" width="25%">&ensp;<img src="./art/1.jpg" width="25%">
 
-<img src="./art/screenAbout.png" width="25%"> &ensp;<img src="./art/screenNointernet.png" width="25%">
+
 
 
 ### Skills
