@@ -5,4 +5,7 @@ package com.openclassrooms.realestatemanager.base
  * Android Engineer,
  * Brussels
  */
-interface realStateManagerViewState
+interface RealStateManagerView<S : RealStateManagerViewState> {
+    fun configureViewModel()
+    fun render(state: S?)
+}

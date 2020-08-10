@@ -22,7 +22,7 @@ import com.google.android.material.textfield.TextInputLayout
 import com.openclassrooms.realestatemanager.R
 import com.openclassrooms.realestatemanager.view.addAgent.ErrorSourceAddAgent.*
 import com.openclassrooms.realestatemanager.injection.Injection
-import com.openclassrooms.realestatemanager.base.realStateManagerView
+import com.openclassrooms.realestatemanager.base.RealStateManagerView
 import com.openclassrooms.realestatemanager.utils.*
 import com.openclassrooms.realestatemanager.utils.extensions.saveToInternalStorage
 import com.openclassrooms.realestatemanager.viewmodel.AddAgentViewModel
@@ -35,7 +35,7 @@ import pub.devrel.easypermissions.EasyPermissions
  * Android Engineer,
  * Brussels
  */
-class AddAgentView : Fragment(), realStateManagerView<AddAgentViewState>, EasyPermissions.PermissionCallbacks {
+class AddAgentView : Fragment(), RealStateManagerView<AddAgentViewState>, EasyPermissions.PermissionCallbacks {
 
     @BindView(R.id.add_agent_view_firstName) lateinit var firstName: EditText
     @BindView(R.id.add_agent_view_lastName) lateinit var lastName: EditText

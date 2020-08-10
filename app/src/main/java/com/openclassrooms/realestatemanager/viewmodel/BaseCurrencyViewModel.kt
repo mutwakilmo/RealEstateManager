@@ -3,7 +3,7 @@ package com.openclassrooms.realestatemanager.viewmodel
 import com.openclassrooms.realestatemanager.data.repository.CurrencyRepository
 import com.openclassrooms.realestatemanager.base.BaseViewModel
 import com.openclassrooms.realestatemanager.base.LoadingContentError
-import com.openclassrooms.realestatemanager.base.realStateManagerViewModel
+import com.openclassrooms.realestatemanager.base.RealStateManagerViewModel
 import com.openclassrooms.realestatemanager.viewstate.BaseCurrencyIntent
 import com.openclassrooms.realestatemanager.viewstate.BaseCurrencyResult
 import com.openclassrooms.realestatemanager.viewstate.BaseCurrencyViewState
@@ -14,7 +14,7 @@ import com.openclassrooms.realestatemanager.viewstate.BaseCurrencyViewState
  * Brussels
  */
 class BaseCurrencyViewModel(private val currencyRepository: CurrencyRepository) : BaseViewModel<BaseCurrencyViewState>(),
-        realStateManagerViewModel<BaseCurrencyIntent, BaseCurrencyResult> {
+        RealStateManagerViewModel<BaseCurrencyIntent, BaseCurrencyResult> {
 
     private var currentViewState = BaseCurrencyViewState()
         set(value) {

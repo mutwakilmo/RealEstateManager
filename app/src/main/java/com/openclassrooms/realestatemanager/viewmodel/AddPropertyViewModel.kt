@@ -18,7 +18,7 @@ import com.openclassrooms.realestatemanager.data.repository.PropertyRepository
 import com.openclassrooms.realestatemanager.data.repository.SaveDataRepository
 import com.openclassrooms.realestatemanager.base.BaseViewModel
 import com.openclassrooms.realestatemanager.base.LoadingContentError
-import com.openclassrooms.realestatemanager.base.realStateManagerViewModel
+import com.openclassrooms.realestatemanager.base.RealStateManagerViewModel
 import com.openclassrooms.realestatemanager.utils.*
 import com.openclassrooms.realestatemanager.utils.extensions.*
 import com.openclassrooms.realestatemanager.viewstate.AddPropertyIntent
@@ -41,7 +41,7 @@ class AddPropertyViewModel (
         private val propertyRepository: PropertyRepository,
         private val currencyRepository: CurrencyRepository,
         private val saveDataRepository: SaveDataRepository)
-    : BaseViewModel<AddPropertyViewState>(), realStateManagerViewModel<AddPropertyIntent, AddPropertyResult>,
+    : BaseViewModel<AddPropertyViewState>(), RealStateManagerViewModel<AddPropertyIntent, AddPropertyResult>,
         BitmapDownloader.Listeners{
 
     private var currentViewState = AddPropertyViewState()

@@ -12,8 +12,8 @@ import butterknife.BindView
 import butterknife.ButterKnife
 import com.openclassrooms.realestatemanager.R
 import com.openclassrooms.realestatemanager.injection.Injection
-import com.openclassrooms.realestatemanager.base.BaseFragmentREALSTATEMANAGER
-import com.openclassrooms.realestatemanager.base.realStateManagerView
+import com.openclassrooms.realestatemanager.base.BaseFragmentRealStateManager
+import com.openclassrooms.realestatemanager.base.RealStateManagerView
 import com.openclassrooms.realestatemanager.utils.Currency
 import com.openclassrooms.realestatemanager.viewmodel.BaseCurrencyViewModel
 import com.openclassrooms.realestatemanager.viewstate.BaseCurrencyViewState
@@ -24,8 +24,8 @@ import java.lang.ref.WeakReference
  * Android Engineer,
  * Brussels
  */
-abstract class BaseCurrencyActivity<F : BaseFragmentREALSTATEMANAGER> : AppCompatActivity(), realStateManagerView<BaseCurrencyViewState>,
-        BaseFragmentREALSTATEMANAGER.OnLoading {
+abstract class BaseCurrencyActivity<F : BaseFragmentRealStateManager> : AppCompatActivity(), RealStateManagerView<BaseCurrencyViewState>,
+        BaseFragmentRealStateManager.OnLoading {
 
 
 
@@ -64,8 +64,8 @@ abstract class BaseCurrencyActivity<F : BaseFragmentREALSTATEMANAGER> : AppCompa
     }
 
     private fun setupCallbackToView(){
-        if(view is BaseFragmentREALSTATEMANAGER){
-            (view as BaseFragmentREALSTATEMANAGER).callbackLoading = WeakReference(this)
+        if(view is BaseFragmentRealStateManager){
+            (view as BaseFragmentRealStateManager).callbackLoading = WeakReference(this)
         }
     }
 

@@ -33,8 +33,8 @@ import com.openclassrooms.realestatemanager.view.addProperty.ErrorSourceAddPrope
 import com.openclassrooms.realestatemanager.data.entity.Agent
 import com.openclassrooms.realestatemanager.data.entity.Picture
 import com.openclassrooms.realestatemanager.injection.Injection
-import com.openclassrooms.realestatemanager.base.BaseFragmentREALSTATEMANAGER
-import com.openclassrooms.realestatemanager.base.realStateManagerView
+import com.openclassrooms.realestatemanager.base.BaseFragmentRealStateManager
+import com.openclassrooms.realestatemanager.base.RealStateManagerView
 import com.openclassrooms.realestatemanager.utils.*
 import com.openclassrooms.realestatemanager.utils.Currency
 import com.openclassrooms.realestatemanager.utils.Currency.DOLLAR
@@ -54,7 +54,7 @@ import java.util.*
  * A simple [Fragment] subclass.
  *
  */
-class AddPropertyView : BaseFragmentREALSTATEMANAGER(), realStateManagerView<AddPropertyViewState>,
+class AddPropertyView : BaseFragmentRealStateManager(), RealStateManagerView<AddPropertyViewState>,
         PickDateDialogView.OnOkButtonListener, ListAgentsDialogView.OnAgentSelected, ListPictureAdapter.Listener,
         SnackBarListener{
 

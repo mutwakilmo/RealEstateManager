@@ -2,8 +2,8 @@ package com.openclassrooms.realestatemanager.viewstate
 
 import com.openclassrooms.realestatemanager.data.entity.PropertyWithAllData
 import com.openclassrooms.realestatemanager.base.realStateManagerIntent
-import com.openclassrooms.realestatemanager.base.realStateManageresult
-import com.openclassrooms.realestatemanager.base.realStateManagerViewState
+import com.openclassrooms.realestatemanager.base.RealStateManagerResult
+import com.openclassrooms.realestatemanager.base.RealStateManagerViewState
 import com.openclassrooms.realestatemanager.view.listProperties.ActionTypeList
 import com.openclassrooms.realestatemanager.view.listProperties.ErrorSourceListProperty
 
@@ -18,9 +18,9 @@ data class ListPropertyViewState(
         val listProperties: List<PropertyWithAllData>? = null,
         val openDetails: Boolean = false,
         val itemSelected: Int? = null
-) : realStateManagerViewState
+) : RealStateManagerViewState
 
-sealed class PropertyListResult : realStateManageresult{
+sealed class PropertyListResult : RealStateManagerResult{
     data class DisplayPropertiesResult(val properties: List<PropertyWithAllData>?) : PropertyListResult()
     data class OpenPropertyDetailResult(val itemSelected: Int?) : PropertyListResult()
 }

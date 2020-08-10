@@ -8,7 +8,7 @@ import java.lang.ref.WeakReference
  * Android Engineer,
  * Brussels
  */
-abstract class BaseFragmentREALSTATEMANAGER : Fragment(){
+abstract class BaseFragmentRealStateManager : Fragment(){
 
     interface OnLoading{
         fun displayLoading(loading: Boolean)

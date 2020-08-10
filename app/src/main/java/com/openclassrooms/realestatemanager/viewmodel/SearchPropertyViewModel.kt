@@ -8,7 +8,7 @@ import com.openclassrooms.realestatemanager.data.repository.CurrencyRepository
 import com.openclassrooms.realestatemanager.data.repository.PropertyRepository
 import com.openclassrooms.realestatemanager.base.BaseViewModel
 import com.openclassrooms.realestatemanager.base.LoadingContentError
-import com.openclassrooms.realestatemanager.base.realStateManagerViewModel
+import com.openclassrooms.realestatemanager.base.RealStateManagerViewModel
 import com.openclassrooms.realestatemanager.view.searchProperty.ErrorSourceSearch
 import com.openclassrooms.realestatemanager.viewstate.SeachPropertyViewState
 import com.openclassrooms.realestatemanager.viewstate.SearchPropertyIntent
@@ -32,7 +32,7 @@ class SearchPropertyViewModel(
         private val agentRepository: AgentRepository,
         private val propertyRepository: PropertyRepository,
         private val currencyRepository: CurrencyRepository
-) : BaseViewModel<SeachPropertyViewState>(), realStateManagerViewModel<SearchPropertyIntent, SearchPropertyResult> {
+) : BaseViewModel<SeachPropertyViewState>(), RealStateManagerViewModel<SearchPropertyIntent, SearchPropertyResult> {
 
     private var currentViewState = SeachPropertyViewState()
         set(value) {

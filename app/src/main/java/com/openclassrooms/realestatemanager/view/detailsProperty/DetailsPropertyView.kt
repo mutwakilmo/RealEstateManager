@@ -25,8 +25,8 @@ import com.openclassrooms.realestatemanager.data.entity.Amenity
 import com.openclassrooms.realestatemanager.data.entity.Picture
 import com.openclassrooms.realestatemanager.data.entity.Property
 import com.openclassrooms.realestatemanager.injection.Injection
-import com.openclassrooms.realestatemanager.base.BaseFragmentREALSTATEMANAGER
-import com.openclassrooms.realestatemanager.base.realStateManagerView
+import com.openclassrooms.realestatemanager.base.BaseFragmentRealStateManager
+import com.openclassrooms.realestatemanager.base.RealStateManagerView
 import com.openclassrooms.realestatemanager.utils.*
 import com.openclassrooms.realestatemanager.utils.extensions.*
 import com.openclassrooms.realestatemanager.viewmodel.DetailsPropertyViewModel
@@ -40,7 +40,7 @@ import com.smarteist.autoimageslider.SliderView
  * A simple [Fragment] subclass.
  *
  */
-class DetailsPropertyView : BaseFragmentREALSTATEMANAGER(), realStateManagerView<DetailsPropertyViewState> {
+class DetailsPropertyView : BaseFragmentRealStateManager(), RealStateManagerView<DetailsPropertyViewState> {
 
     @BindView(R.id.details_view_description) lateinit var description: TextView
     @BindView(R.id.details_view_surface) lateinit var surface: TextView

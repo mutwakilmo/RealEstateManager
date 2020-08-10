@@ -5,5 +5,4 @@ package com.openclassrooms.realestatemanager.base
  * Android Engineer,
  * Brussels
  */
-interface realStateManageresult {
-}
+interface RealStateManagerViewState

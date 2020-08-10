@@ -11,7 +11,7 @@ import com.openclassrooms.realestatemanager.data.repository.SaveDataRepository
 import com.openclassrooms.realestatemanager.view.mainActivity.ErrorSourceMainActivity.*
 import com.openclassrooms.realestatemanager.base.BaseViewModel
 import com.openclassrooms.realestatemanager.base.LoadingContentError
-import com.openclassrooms.realestatemanager.base.realStateManagerViewModel
+import com.openclassrooms.realestatemanager.base.RealStateManagerViewModel
 import com.openclassrooms.realestatemanager.view.mainActivity.ErrorSourceMainActivity
 import com.openclassrooms.realestatemanager.viewstate.MainActivityIntent
 import com.openclassrooms.realestatemanager.viewstate.MainActivityResult
@@ -32,7 +32,7 @@ class MainActivityViewModel(
         private val currencyRepository: CurrencyRepository,
         private val propertyRepository: PropertyRepository,
         private val saveDataRepository: SaveDataRepository
-) : BaseViewModel<MainActivityViewState>(), realStateManagerViewModel<MainActivityIntent, MainActivityResult>{
+) : BaseViewModel<MainActivityViewState>(), RealStateManagerViewModel<MainActivityIntent, MainActivityResult>{
 
     private var currentViewState = MainActivityViewState()
         set(value) {

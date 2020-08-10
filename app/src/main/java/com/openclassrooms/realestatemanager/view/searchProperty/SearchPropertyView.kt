@@ -24,8 +24,8 @@ import com.openclassrooms.realestatemanager.R
 import com.openclassrooms.realestatemanager.view.addProperty.PickDateDialogView
 import com.openclassrooms.realestatemanager.data.entity.Agent
 import com.openclassrooms.realestatemanager.injection.Injection
-import com.openclassrooms.realestatemanager.base.BaseFragmentREALSTATEMANAGER
-import com.openclassrooms.realestatemanager.base.realStateManagerView
+import com.openclassrooms.realestatemanager.base.BaseFragmentRealStateManager
+import com.openclassrooms.realestatemanager.base.RealStateManagerView
 import com.openclassrooms.realestatemanager.view.searchPropertyResult.SearchResultActivity
 import com.openclassrooms.realestatemanager.utils.*
 import com.openclassrooms.realestatemanager.utils.Currency
@@ -40,7 +40,7 @@ import java.util.*
 /**
  * A simple [Fragment] subclass.
  */
-class SearchPropertyView : BaseFragmentREALSTATEMANAGER(), realStateManagerView<SeachPropertyViewState>, ListAgentSearchAdapter.ListenerCheckBox,
+class SearchPropertyView : BaseFragmentRealStateManager(), RealStateManagerView<SeachPropertyViewState>, ListAgentSearchAdapter.ListenerCheckBox,
         PickDateDialogView.OnOkButtonListener{
 
     @BindView(R.id.search_select_all_agents) lateinit var selectAllAgents: CheckBox

@@ -2,8 +2,8 @@ package com.openclassrooms.realestatemanager.viewstate
 
 import com.openclassrooms.realestatemanager.data.entity.Agent
 import com.openclassrooms.realestatemanager.base.realStateManagerIntent
-import com.openclassrooms.realestatemanager.base.realStateManageresult
-import com.openclassrooms.realestatemanager.base.realStateManagerViewState
+import com.openclassrooms.realestatemanager.base.RealStateManagerResult
+import com.openclassrooms.realestatemanager.base.RealStateManagerViewState
 import com.openclassrooms.realestatemanager.view.searchProperty.ErrorSourceSearch
 import com.openclassrooms.realestatemanager.utils.TypeFacility
 import com.openclassrooms.realestatemanager.utils.TypeProperty
@@ -19,7 +19,7 @@ data class SeachPropertyViewState(
         val showProperty: Boolean = false,
         val agents: List<Agent>? = null,
         val loading: Boolean = false
-) : realStateManagerViewState
+) : RealStateManagerViewState
 
 sealed class SearchPropertyIntent : realStateManagerIntent {
     data class SearchPropertyFromInputIntent(
@@ -33,7 +33,7 @@ sealed class SearchPropertyIntent : realStateManagerIntent {
     object GetListAgentsIntent : SearchPropertyIntent()
 }
 
-sealed class SearchPropertyResult : realStateManageresult {
+sealed class SearchPropertyResult : RealStateManagerResult {
     data class SearchResult(val error: List<ErrorSourceSearch>?) : SearchPropertyResult()
     data class ListAgentsResult(val listAgents: List<Agent>?, val errorSource: List<ErrorSourceSearch>?) : SearchPropertyResult()
 }
